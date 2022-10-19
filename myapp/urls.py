@@ -9,4 +9,10 @@ urlpatterns = [
     path('profile/', views.userprofile,name='profile'),
     path('home/', views.Homepage,name='home'),
     path('logout/', views.UserLogout,name='logout'),
+    path('about/', views.Aboutpage,name='about'),
+    path('service/', views.Servicepage,name='service'),
+    path('project/', views.Projectpage,name='project'),
+    path('contact/', views.Contactpage,name='contact'),
+    path('faq/', views.Faqpage,name='faq'),
+    path('team/', views.Teampage,name='team'),
 ]

@@ -17,16 +17,16 @@
 <meta charset="utf-8">
 <title>Contra - Interior Creator HTML Template | Home Page 01</title>
 <!-- Stylesheets -->
-<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-<link href="{% static 'css/home-style.css' %}" rel="stylesheet">
-<link href="{% static 'css/responsive.css' %}" rel="stylesheet">   
+<link href="{% static 'home_resource/css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'home_resource/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'home_resource/css/responsive.css' %}" rel="stylesheet">   
 <!--Color Switcher Mockup-->
-<link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+<link href="{% static 'home_resource/css/color-switcher-design.css' %}" rel="stylesheet">
 <!--Color Themes-->
-<link id="theme-color-file" href="{% static 'css/color-themes/default-theme.css' %}" rel="stylesheet">
+<link id="theme-color-file" href="{% static 'home_resource/css/color-themes/default-theme.css' %}" rel="stylesheet">
 
-<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
-<link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+<link rel="shortcut icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -46,7 +46,7 @@
             <div class="header-lower">
                 <div class="main-box clearfix">
                     <div class="logo-box">
-                        <div class="logo"><a href="{% static 'index-2.html' %}"><img src="{% static 'images/logo-2.png' %}" alt="" title=""></a></div>
+                        <div class="logo"><a href="{% static 'home_resource/index-2.html' %}"><img src="{% static 'home_resource/images/logo-2.png' %}" alt="" title=""></a></div>
                     </div>
 
                     <div class="nav-outer clearfix">
@@ -61,79 +61,79 @@
                             
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Projects</a></li>
+                                    <li><a href="{% url 'myapp:home' %}">Home</a></li>
+                                    <li><a href="{% url 'myapp:about' %}">About</a></li>
+                                    <li><a href="{% url 'myapp:service' %}">Services</a></li>
+                                    <li><a href="{% url 'myapp:project' %}">Projects</a></li>
                                     <li><a href="#">Blog</a></li>
                                     <li><a href="#">Shop</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
                                     <li><a href="{% url 'myapp:login' %}">Login</a></li>
                                     <!-- <li class="current dropdown"><a href="#">Home</a>
                                         <ul>
                                             <li class="dropdown"><a href="#">Header Styles</a>
                                                 <ul>
-                                                    <li><a href="{% static 'index-2.html' %}">Header Style One</a></li>
-                                                    <li><a href="{% static 'index-3.html' %}">Header Style Two</a></li>
-                                                    <li><a href="{% static 'index-4.html' %}">Header Style Three</a></li>
-                                                    <li><a href="{% static 'index-5.html' %}">Header Style Four</a></li>
-                                                    <li><a href="{% static 'index-6.html' %}">Header Style Five</a></li>
-                                                    <li><a href="{% static 'index-7.html' %}">Header Style Six</a></li>
-                                                    <li><a href="{% static 'about.html' %}">Header Style Seven</a></li>
+                                                    <li><a href="{% static 'home_resource/index-2.html' %}">Header Style One</a></li>
+                                                    <li><a href="{% static 'home_resource/index-3.html' %}">Header Style Two</a></li>
+                                                    <li><a href="{% static 'home_resource/index-4.html' %}">Header Style Three</a></li>
+                                                    <li><a href="{% static 'home_resource/index-5.html' %}">Header Style Four</a></li>
+                                                    <li><a href="{% static 'home_resource/index-6.html' %}">Header Style Five</a></li>
+                                                    <li><a href="{% static 'home_resource/index-7.html' %}">Header Style Six</a></li>
+                                                    <li><a href="{% static 'home_resource/about.html' %}">Header Style Seven</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{% static 'index-2.html' %}">Home page 01</a></li>
-                                            <li><a href="{% static 'index-3.html' %}">Home page 02</a></li>
-                                            <li><a href="{% static 'index-4.html' %}">Home page 03</a></li>
-                                            <li><a href="{% static 'index-5.html' %}">Home page 04</a></li>
-                                            <li><a href="{% static 'index-6.html' %}">Home page 05</a></li>
-                                            <li><a href="{% static 'index-7.html' %}">Home page 06</a></li>
+                                            <li><a href="{% static 'home_resource/index-2.html' %}">Home page 01</a></li>
+                                            <li><a href="{% static 'home_resource/index-3.html' %}">Home page 02</a></li>
+                                            <li><a href="{% static 'home_resource/index-4.html' %}">Home page 03</a></li>
+                                            <li><a href="{% static 'home_resource/index-5.html' %}">Home page 04</a></li>
+                                            <li><a href="{% static 'home_resource/index-6.html' %}">Home page 05</a></li>
+                                            <li><a href="{% static 'home_resource/index-7.html' %}">Home page 06</a></li>
                                         </ul>
                                     </li> -->
                                     <!-- <li class="dropdown"><a href="#">About</a>
                                         <ul>
-                                            <li><a href="{% static 'about.html' %}">About Us</a></li>
-                                            <li><a href="{% static 'faq.html' %}">FAQ's</a></li>
-                                            <li><a href="{% static 'home_team.html' %}">Our Team</a></li>
-                                            <li><a href="{% static 'coming-soon.html' %}">Coming Soon</a></li>
+                                            <li><a href="{% static 'home_resource/about.html' %}">About Us</a></li>
+                                            <li><a href="{% static 'home_resource/faq.html' %}">FAQ's</a></li>
+                                            <li><a href="{% url 'myapp:team' %}">Our Team</a></li>
+                                            <li><a href="{% static 'home_resource/coming-soon.html' %}">Coming Soon</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#">Services</a>
                                         <ul>
-                                            <li><a href="{% static 'services.html' %}">All Services</a></li>
-                                            <li><a href="{% static 'service-detail.html' %}">Commercial Design</a></li>
-                                            <li><a href="{% static 'service-detail.html' %}">Landescape Design</a></li>
-                                            <li><a href="{% static 'service-detail.html' %}">Interior Design</a></li>
-                                            <li><a href="{% static 'service-detail.html' %}">Complete Interior</a></li>
-                                            <li><a href="{% static 'service-detail.html' %}">House Interior</a></li>
-                                            <li><a href="{% static 'service-detail.html' %}">Service Detail</a></li>
+                                            <li><a href="{% static 'home_resource/services.html' %}">All Services</a></li>
+                                            <li><a href="{% static 'home_resource/service-detail.html' %}">Commercial Design</a></li>
+                                            <li><a href="{% static 'home_resource/service-detail.html' %}">Landescape Design</a></li>
+                                            <li><a href="{% static 'home_resource/service-detail.html' %}">Interior Design</a></li>
+                                            <li><a href="{% static 'home_resource/service-detail.html' %}">Complete Interior</a></li>
+                                            <li><a href="{% static 'home_resource/service-detail.html' %}">House Interior</a></li>
+                                            <li><a href="{% static 'home_resource/service-detail.html' %}">Service Detail</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#">Projects</a>
                                         <ul>
-                                            <li><a href="{% static 'projects.html' %}">Projects</a></li>
-                                            <li><a href="{% static 'project-detail.html' %}">Project Detail</a></li>
+                                            <li><a href="{% static 'home_resource/projects.html' %}">Projects</a></li>
+                                            <li><a href="{% static 'home_resource/project-detail.html' %}">Project Detail</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#">Blog</a>
                                         <ul>
-                                            <li><a href="{% static 'blog.html">Blog</a></li>
-                                            <li><a href="{% static 'blog-classic.html' %}">Blog Classic</a></li>
-                                            <li><a href="{% static 'blog-detail.html' %}">Blog Detail 01</a></li>
-                                            <li><a href="{% static 'blog-detail-2.html' %}">Blog Detail 02</a></li>
-                                            <li><a href="{% static 'error-page.html' %}">Error Page</a></li>
+                                            <li><a href="{% static 'home_resource/blog.html">Blog</a></li>
+                                            <li><a href="{% static 'home_resource/blog-classic.html' %}">Blog Classic</a></li>
+                                            <li><a href="{% static 'home_resource/blog-detail.html' %}">Blog Detail 01</a></li>
+                                            <li><a href="{% static 'home_resource/blog-detail-2.html' %}">Blog Detail 02</a></li>
+                                            <li><a href="{% static 'home_resource/error-page.html' %}">Error Page</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown"><a href="#">Shop</a>
                                         <ul>
-                                            <li><a href="{% static 'shop.html' %}">Shop</a></li>
-                                            <li><a href="{% static 'shop-single.html' %}">Product Details</a></li>
-                                            <li><a href="{% static 'shoping-cart.html' %}">Cart Page</a></li>
-                                            <li><a href="{% static 'checkout.html' %}">Checkout Page</a></li>
-                                            <li><a href="{% static 'login.html' %}">Registration Page</a></li>
+                                            <li><a href="{% static 'home_resource/shop.html' %}">Shop</a></li>
+                                            <li><a href="{% static 'home_resource/shop-single.html' %}">Product Details</a></li>
+                                            <li><a href="{% static 'home_resource/shoping-cart.html' %}">Cart Page</a></li>
+                                            <li><a href="{% static 'home_resource/checkout.html' %}">Checkout Page</a></li>
+                                            <li><a href="{% static 'home_resource/login.html' %}">Registration Page</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{% static 'contact.html' %}">Contact</a></li>
+                                    <li><a href="{% static 'home_resource/contact.html' %}">Contact</a></li>
                                     <li class="dropdown has-mega-menu"><a href="#">Login</a>
                                         <div class="mega-menu">
                                             <div class="mega-menu-bar row clearfix">
@@ -142,41 +142,41 @@
                                                     <ul>
 														<li><a href="{% url 'myapp:login' %}">Login</a></li>
 														<li><a href="{% url 'myapp:signup' %}">Sign Up</a></li>
-                                                        <li><a href="{% static 'about.html' %}">About Us</a></li>
-                                                        <li><a href="{% static 'faq.html' %}">FAQ's</a></li>
-                                                        <li><a href="{% static 'home_team.html' %}">Our Team</a></li>
-                                                        <li><a href="{% static 'coming-soon.html' %}">Coming Soon</a></li>
-                                                        <li><a href="{% static 'login.html' %}">Login</a></li>
+                                                        <li><a href="{% static 'home_resource/about.html' %}">About Us</a></li>
+                                                        <li><a href="{% static 'home_resource/faq.html' %}">FAQ's</a></li>
+                                                        <li><a href="{% url 'myapp:team' %}">Our Team</a></li>
+                                                        <li><a href="{% static 'home_resource/coming-soon.html' %}">Coming Soon</a></li>
+                                                        <li><a href="{% static 'home_resource/login.html' %}">Login</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="column col-lg-3 col-md-3 col-sm-12">
                                                     <h3>Services</h3>
                                                     <ul>
-                                                        <li><a href="{% static 'services.html' %}">All Services</a></li>
-                                                        <li><a href="{% static 'service-detail.html' %}">Commercial Design</a></li>
-                                                        <li><a href="{% static 'service-detail.html' %}">Landescape Design</a></li>
-                                                        <li><a href="{% static 'service-detail.html' %}">Complete Interior</a></li>
-                                                        <li><a href="{% static 'service-detail.html' %}">Service Detail</a></li>
+                                                        <li><a href="{% static 'home_resource/services.html' %}">All Services</a></li>
+                                                        <li><a href="{% static 'home_resource/service-detail.html' %}">Commercial Design</a></li>
+                                                        <li><a href="{% static 'home_resource/service-detail.html' %}">Landescape Design</a></li>
+                                                        <li><a href="{% static 'home_resource/service-detail.html' %}">Complete Interior</a></li>
+                                                        <li><a href="{% static 'home_resource/service-detail.html' %}">Service Detail</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="column col-lg-3 col-md-3 col-sm-12">
                                                     <h3>Projects</h3>
                                                     <ul>
-                                                        <li><a href="{% static 'projects.html' %}">Projects</a></li>
-                                                        <li><a href="{% static 'projects.html' %}">Commercial Projects</a></li>
-                                                        <li><a href="{% static 'projects.html' %}">Landescape Projects</a></li>
-                                                        <li><a href="{% static 'project-detail.html' %}">Project Detail</a></li>
-                                                        <li><a href="{% static 'contact.html' %}">Contact</a></li>
+                                                        <li><a href="{% static 'home_resource/projects.html' %}">Projects</a></li>
+                                                        <li><a href="{% static 'home_resource/projects.html' %}">Commercial Projects</a></li>
+                                                        <li><a href="{% static 'home_resource/projects.html' %}">Landescape Projects</a></li>
+                                                        <li><a href="{% static 'home_resource/project-detail.html' %}">Project Detail</a></li>
+                                                        <li><a href="{% static 'home_resource/contact.html' %}">Contact</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="column col-lg-3 col-md-3 col-sm-12">
                                                     <h3>Blog</h3>
                                                     <ul>
-                                                        <li><a href="{% static 'blog.html">Blog Grid</a></li>
-                                                        <li><a href="{% static 'blog-classic.html' %}">Blog Classic</a></li>
-                                                        <li><a href="{% static 'blog-detail.html' %}">Blog Detail 01</a></li>
-                                                        <li><a href="{% static 'blog-detail-2.html' %}">Blog Detail 01</a></li>
-                                                        <li><a href="{% static 'error-page.html' %}">Error Page</a></li>
+                                                        <li><a href="{% static 'home_resource/blog.html">Blog Grid</a></li>
+                                                        <li><a href="{% static 'home_resource/blog-classic.html' %}">Blog Classic</a></li>
+                                                        <li><a href="{% static 'home_resource/blog-detail.html' %}">Blog Detail 01</a></li>
+                                                        <li><a href="{% static 'home_resource/blog-detail-2.html' %}">Blog Detail 01</a></li>
+                                                        <li><a href="{% static 'home_resource/error-page.html' %}">Error Page</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -217,37 +217,37 @@
     <!-- Bnner Section -->
     <section class="banner-section">
         <div class="banner-carousel owl-carousel owl-theme">
-            <div class="slide-item" style="background-image: url(/static/images/main-slider/image-1.jpg);">
+            <div class="slide-item" style="background-image: url(/static/home_resource/images/main-slider/image-1.jpg);">
                 <div class="auto-container">
                     <div class="content-box">
                         <h2>Architecture is a <br> Visual Art.</h2>
                         <div class="text">The buildings speak for themselves</div>
                         <div class="link-box">
-                            <a href="{% static 'about.html' %}" class="theme-btn btn-style-one">Check Art</a>
+                            <a href="{% static 'home_resource/about.html' %}" class="theme-btn btn-style-one">Check Art</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="slide-item" style="background-image: url(/static/images/main-slider/image-2.jpg);">
+            <div class="slide-item" style="background-image: url(/static/home_resource/images/main-slider/image-2.jpg);">
                 <div class="auto-container">
                     <div class="content-box">
                         <h2>Architecture is a <br> Visual Art.</h2>
                         <div class="text">The buildings speak for themselves</div>
                         <div class="link-box">
-                            <a href="{% static 'about.html' %}" class="theme-btn btn-style-one">Check Art</a>
+                            <a href="{% static 'home_resource/about.html' %}" class="theme-btn btn-style-one">Check Art</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="slide-item" style="background-image: url(/static/images/main-slider/image-3.jpg);">
+            <div class="slide-item" style="background-image: url(/static/home_resource/images/main-slider/image-3.jpg);">
                 <div class="auto-container">
                     <div class="content-box">
                         <h2>Architecture is a <br> Visual Art.</h2>
                         <div class="text">The buildings speak for themselves</div>
                         <div class="link-box">
-                            <a href="{% static 'about.html' %}" class="theme-btn btn-style-one">Check Art</a>
+                            <a href="{% static 'home_resource/about.html' %}" class="theme-btn btn-style-one">Check Art</a>
                         </div>
                     </div>
                 </div>
@@ -266,7 +266,7 @@
     <!-- End Bnner Section -->
 
     <!-- About Section -->
-    <section class="about-section" style="background-image: url(/static/images/background/1.jpg);">
+    <section class="about-section" style="background-image: url(/static/home_resource/images/background/1.jpg);">
         <div class="auto-container">
             <div class="row no-gutters">
                 <!-- Image Column -->
@@ -276,8 +276,8 @@
                             <h2>ABOUT <br> US</h2>
                         </div>
                         <div class="image-box">
-                            <figure class="alphabet-img wow fadeInRight"><img src="{% static 'images/resource/alphabet-image.png' %}" alt=""></figure>
-                            <figure class="image wow fadeInRight" data-wow-delay='600ms'><img src="{% static 'images/resource/image-1.jpg' %}" alt=""></figure>
+                            <figure class="alphabet-img wow fadeInRight"><img src="{% static 'home_resource/images/resource/alphabet-image.png' %}" alt=""></figure>
+                            <figure class="image wow fadeInRight" data-wow-delay='600ms'><img src="{% static 'home_resource/images/resource/image-1.jpg' %}" alt=""></figure>
                         </div>
                     </div>
                 </div>
@@ -290,7 +290,7 @@
                                 <h2>Any  Complexity <br>For Any Cat</h2>
                             </div>
                             <div class="text">Our company has many years experience and specializes in manufacturing, salling, serviceing and repairing cardan shafts (cardans) for various vehicles, technological equipment, tractor, special machinery and agricultural machinery of verious domestic and foreign manufacturers.</div>
-                            <div class="link-box"><a href="{% static 'about.html' %}" class="theme-btn btn-style-one">About Us</a></div>
+                            <div class="link-box"><a href="{% static 'home_resource/about.html' %}" class="theme-btn btn-style-one">About Us</a></div>
                         </div>
                     </div>
                 </div>
@@ -301,7 +301,7 @@
 
     <!-- Services Section -->
     <section class="services-section">
-        <div class="upper-box" style="background-image: url(/static/images/background/2.jpg);">
+        <div class="upper-box" style="background-image: url(/static/home_resource/images/background/2.jpg);">
             <div class="auto-container">    
                 <div class="sec-title text-center light">
                     <span class="float-text">Specialization</span>
@@ -317,13 +317,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-1.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-1.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Architectural Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Architectural Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -333,13 +333,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-2.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-2.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Interior Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Interior Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -349,13 +349,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-3.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-3.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Corporate Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Corporate Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -365,13 +365,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-1.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-1.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Architectural Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Architectural Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -381,13 +381,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-2.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-2.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Interior Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Interior Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -397,13 +397,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-3.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-3.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Corporate Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Corporate Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -413,13 +413,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-1.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-1.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Architectural Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Architectural Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -429,13 +429,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-2.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-2.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Interior Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Interior Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -445,13 +445,13 @@
                     <div class="service-block">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="{% static 'service-detail.html' %}"><img src="{% static 'images/resource/service-3.jpg' %}" alt=""></a></figure>
+                                <figure class="image"><a href="{% static 'home_resource/service-detail.html' %}"><img src="{% static 'home_resource/images/resource/service-3.jpg' %}" alt=""></a></figure>
                             </div>
                             <div class="lower-content">
-                                <h3><a href="{% static 'service-detail.html' %}">Corporate Design</a></h3>
+                                <h3><a href="{% static 'home_resource/service-detail.html' %}">Corporate Design</a></h3>
                                 <div class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they.</div>
                                 <div class="link-box">
-                                    <a href="{% static 'service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
+                                    <a href="{% static 'home_resource/service-detail.html' %}">Lorn More <i class="fa fa-long-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -464,7 +464,7 @@
 
     <!-- Fun Fact Section -->
     <section class="fun-fact-section">
-        <div class="outer-box" style="background-image: url(/static/images/background/3.jpg);">
+        <div class="outer-box" style="background-image: url(/static/home_resource/images/background/3.jpg);">
             <div class="auto-container">
                 <div class="fact-counter">
                     <div class="row">
@@ -520,12 +520,12 @@
                 <!-- Project Block -->
                 <div class="project-block">
                     <div class="image-box">
-                        <figure class="image"><img src="{% static 'images/gallery/1.jpg' %}" alt=""></figure>
+                        <figure class="image"><img src="{% static 'home_resource/images/gallery/1.jpg' %}" alt=""></figure>
                         <div class="overlay-box">
-                            <h4><a href="{% static 'project-detail.html' %}">Laxury Home <br>Project</a></h4>
+                            <h4><a href="{% static 'home_resource/project-detail.html' %}">Laxury Home <br>Project</a></h4>
                             <div class="btn-box">
-                                <a href="{% static 'images/gallery/1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                <a href="{% static 'project-detail.html' %}"><i class="fa fa-external-link"></i></a>
+                                <a href="{% static 'home_resource/images/gallery/1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
+                                <a href="{% static 'home_resource/project-detail.html' %}"><i class="fa fa-external-link"></i></a>
                             </div>
                             <span class="tag">Architecture</span>
                         </div>
@@ -535,12 +535,12 @@
                 <!-- Project Block -->
                 <div class="project-block">
                     <div class="image-box">
-                        <figure class="image"><img src="{% static 'images/gallery/2.jpg' %}" alt=""></figure>
+                        <figure class="image"><img src="{% static 'home_resource/images/gallery/2.jpg' %}" alt=""></figure>
                         <div class="overlay-box">
-                            <h4><a href="{% static 'project-detail.html' %}">Laxury Home <br>Project</a></h4>
+                            <h4><a href="{% static 'home_resource/project-detail.html' %}">Laxury Home <br>Project</a></h4>
                             <div class="btn-box">
-                                <a href="{% static 'images/gallery/2.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                <a href="{% static 'project-detail.html' %}"><i class="fa fa-external-link"></i></a>
+                                <a href="{% static 'home_resource/images/gallery/2.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
+                                <a href="{% static 'home_resource/project-detail.html' %}"><i class="fa fa-external-link"></i></a>
                             </div>
                             <span class="tag">Architecture</span>
                         </div>
@@ -550,12 +550,12 @@
                 <!-- Project Block -->
                 <div class="project-block">
                     <div class="image-box">
-                        <figure class="image"><img src="{% static 'images/gallery/3.jpg' %}" alt=""></figure>
+                        <figure class="image"><img src="{% static 'home_resource/images/gallery/3.jpg' %}" alt=""></figure>
                         <div class="overlay-box">
-                            <h4><a href="{% static 'project-detail.html' %}">Laxury Home <br>Project</a></h4>
+                            <h4><a href="{% static 'home_resource/project-detail.html' %}">Laxury Home <br>Project</a></h4>
                             <div class="btn-box">
-                                <a href="{% static 'images/gallery/3.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                <a href="{% static 'project-detail.html' %}"><i class="fa fa-external-link"></i></a>
+                                <a href="{% static 'home_resource/images/gallery/3.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
+                                <a href="{% static 'home_resource/project-detail.html' %}"><i class="fa fa-external-link"></i></a>
                             </div>
                             <span class="tag">Architecture</span>
                         </div>
@@ -565,12 +565,12 @@
                 <!-- Project Block -->
                 <div class="project-block">
                     <div class="image-box">
-                        <figure class="image"><img src="{% static 'images/gallery/4.jpg' %}" alt=""></figure>
+                        <figure class="image"><img src="{% static 'home_resource/images/gallery/4.jpg' %}" alt=""></figure>
                         <div class="overlay-box">
-                            <h4><a href="{% static 'project-detail.html' %}">Laxury Home <br>Project</a></h4>
+                            <h4><a href="{% static 'home_resource/project-detail.html' %}">Laxury Home <br>Project</a></h4>
                             <div class="btn-box">
-                                <a href="{% static 'images/gallery/4.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                <a href="{% static 'project-detail.html' %}"><i class="fa fa-external-link"></i></a>
+                                <a href="{% static 'home_resource/images/gallery/4.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
+                                <a href="{% static 'home_resource/project-detail.html' %}"><i class="fa fa-external-link"></i></a>
                             </div>
                             <span class="tag">Architecture</span>
                         </div>
@@ -580,12 +580,12 @@
                 <!-- Project Block -->
                 <div class="project-block">
                     <div class="image-box">
-                        <figure class="image"><img src="{% static 'images/gallery/5.jpg' %}" alt=""></figure>
+                        <figure class="image"><img src="{% static 'home_resource/images/gallery/5.jpg' %}" alt=""></figure>
                         <div class="overlay-box">
-                            <h4><a href="{% static 'project-detail.html' %}">Laxury Home <br>Project</a></h4>
+                            <h4><a href="{% static 'home_resource/project-detail.html' %}">Laxury Home <br>Project</a></h4>
                             <div class="btn-box">
-                                <a href="{% static 'images/gallery/5.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                <a href="{% static 'project-detail.html' %}"><i class="fa fa-external-link"></i></a>
+                                <a href="{% static 'home_resource/images/gallery/5.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
+                                <a href="{% static 'home_resource/project-detail.html' %}"><i class="fa fa-external-link"></i></a>
                             </div>
                             <span class="tag">Architecture</span>
                         </div>
@@ -595,12 +595,12 @@
                 <!-- Project Block -->
                 <div class="project-block">
                     <div class="image-box">
-                        <figure class="image"><img src="{% static 'images/gallery/3.jpg' %}" alt=""></figure>
+                        <figure class="image"><img src="{% static 'home_resource/images/gallery/3.jpg' %}" alt=""></figure>
                         <div class="overlay-box">
-                            <h4><a href="{% static 'project-detail.html' %}">Laxury Home <br>Project</a></h4>
+                            <h4><a href="{% static 'home_resource/project-detail.html' %}">Laxury Home <br>Project</a></h4>
                             <div class="btn-box">
-                                <a href="{% static 'images/gallery/3.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                <a href="{% static 'project-detail.html' %}"><i class="fa fa-external-link"></i></a>
+                                <a href="{% static 'home_resource/images/gallery/3.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
+                                <a href="{% static 'home_resource/project-detail.html' %}"><i class="fa fa-external-link"></i></a>
                             </div>
                             <span class="tag">Architecture</span>
                         </div>
@@ -624,7 +624,7 @@
                 <div class="team-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <div class="image"><a href="{% static 'home_team.html' %}"><img src="{% static 'images/resource/team-1.jpg' %}" alt=""></a></div>
+                            <div class="image"><a href="{% url 'myapp:team' %}"><img src="{% static 'home_resource/images/resource/team-1.jpg' %}" alt=""></a></div>
                             <ul class="social-links">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -632,7 +632,7 @@
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
-                            <h3 class="name"><a href="{% static 'home_team.html' %}">Scott Grey</a></h3>
+                            <h3 class="name"><a href="{% url 'myapp:team' %}">Scott Grey</a></h3>
                         </div>
                         <span class="designation">Architect</span>
                     </div>
@@ -642,7 +642,7 @@
                 <div class="team-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <div class="image"><a href="{% static 'home_team.html' %}"><img src="{% static 'images/resource/team-2.jpg' %}" alt=""></a></div>
+                            <div class="image"><a href="{% url 'myapp:team' %}"><img src="{% static 'home_resource/images/resource/team-2.jpg' %}" alt=""></a></div>
                             <ul class="social-links">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -650,7 +650,7 @@
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
-                            <h3 class="name"><a href="{% static 'home_team.html' %}">Russel Reed</a></h3>
+                            <h3 class="name"><a href="{% url 'myapp:team' %}">Russel Reed</a></h3>
                         </div>
                         <span class="designation">Project Manager</span>
                     </div>
@@ -660,7 +660,7 @@
                 <div class="team-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <div class="image"><a href="{% static 'home_team.html' %}"><img src="{% static 'images/resource/team-3.jpg' %}" alt=""></a></div>
+                            <div class="image"><a href="{% url 'myapp:team' %}"><img src="{% static 'home_resource/images/resource/team-3.jpg' %}" alt=""></a></div>
                             <ul class="social-links">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -668,7 +668,7 @@
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                                 <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
-                            <h3 class="name"><a href="{% static 'home_team.html' %}">Cheryl Ray</a></h3>
+                            <h3 class="name"><a href="{% url 'myapp:team' %}">Cheryl Ray</a></h3>
                         </div>
                         <span class="designation">Interior Designer</span>
                     </div>
@@ -694,13 +694,13 @@
             </div>
 
             <!-- Testimonial Column -->
-            <div class="testimonial-column clearfix" style="background-image: url(/static/images/background/4.jpg);">
+            <div class="testimonial-column clearfix" style="background-image: url(/static/home_resource/images/background/4.jpg);">
                 <div class="inner-column">
                     <div class="testimonial-carousel owl-carousel owl-theme">
                         <!-- Testimonial Block -->
                         <div class="testimonial-block">
                             <div class="inner-box">
-                                <div class="image-box"><img src="{% static 'images/resource/thumb-1.jpg' %}" alt=""></div>
+                                <div class="image-box"><img src="{% static 'home_resource/images/resource/thumb-1.jpg' %}" alt=""></div>
                                 <div class="text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.</div>
                                 <div class="info-box">
                                     <h4 class="name">Jane Smith</h4>
@@ -712,7 +712,7 @@
                         <!-- Testimonial Block -->
                         <div class="testimonial-block">
                             <div class="inner-box">
-                                <div class="image-box"><img src="{% static 'images/resource/thumb-1.jpg' %}" alt=""></div>
+                                <div class="image-box"><img src="{% static 'home_resource/images/resource/thumb-1.jpg' %}" alt=""></div>
                                 <div class="text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.</div>
                                 <div class="info-box">
                                     <h4 class="name">Jane Smith</h4>
@@ -724,7 +724,7 @@
                         <!-- Testimonial Block -->
                         <div class="testimonial-block">
                             <div class="inner-box">
-                                <div class="image-box"><img src="{% static 'images/resource/thumb-1.jpg' %}" alt=""></div>
+                                <div class="image-box"><img src="{% static 'home_resource/images/resource/thumb-1.jpg' %}" alt=""></div>
                                 <div class="text">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot.</div>
                                 <div class="info-box">
                                     <h4 class="name">Jane Smith</h4>
@@ -751,11 +751,11 @@
                 <div class="news-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img src="{% static 'images/resource/news-1.jpg' %}" alt=""></figure>
-                            <div class="overlay-box"><a href="{% static 'blog-detail.html' %}"><i class="fa fa-link"></i></a></div>
+                            <figure class="image"><img src="{% static 'home_resource/images/resource/news-1.jpg' %}" alt=""></figure>
+                            <div class="overlay-box"><a href="{% static 'home_resource/blog-detail.html' %}"><i class="fa fa-link"></i></a></div>
                         </div>
                         <div class="caption-box">
-                            <h3><a href="{% static 'blog-detail.html'%}">In Good Taste: Mark Finlay Architects & Interiors.</a></h3>
+                            <h3><a href="{% static 'home_resource/blog-detail.html'%}">In Good Taste: Mark Finlay Architects & Interiors.</a></h3>
                             <ul class="info">
                                 <li>06 June 2018,</li>
                                 <li>John Smith</li>
@@ -768,11 +768,11 @@
                 <div class="news-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img src="{% static 'images/resource/news-2.jpg' %}" alt=""></figure>
-                            <div class="overlay-box"><a href="{% static 'blog-detail.html' %}"><i class="fa fa-link"></i></a></div>
+                            <figure class="image"><img src="{% static 'home_resource/images/resource/news-2.jpg' %}" alt=""></figure>
+                            <div class="overlay-box"><a href="{% static 'home_resource/blog-detail.html' %}"><i class="fa fa-link"></i></a></div>
                         </div>
                         <div class="caption-box">
-                            <h3><a href="{% static 'blog-detail.html'%}">The Lexury Apartment of sepcial interiors.</a></h3>
+                            <h3><a href="{% static 'home_resource/blog-detail.html'%}">The Lexury Apartment of sepcial interiors.</a></h3>
                             <ul class="info">
                                 <li>06 June 2018,</li>
                                 <li>John Smith</li>
@@ -785,11 +785,11 @@
                 <div class="news-block col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img src="{% static 'images/resource/news-3.jpg' %}" alt=""></figure>
-                            <div class="overlay-box"><a href="{% static 'blog-detail.html'%}"><i class="fa fa-link"></i></a></div>
+                            <figure class="image"><img src="{% static 'home_resource/images/resource/news-3.jpg' %}" alt=""></figure>
+                            <div class="overlay-box"><a href="{% static 'home_resource/blog-detail.html'%}"><i class="fa fa-link"></i></a></div>
                         </div>
                         <div class="caption-box">
-                            <h3><a href="{% static 'blog-detail.html' %}">The Business metting room interior in the rank.</a></h3>
+                            <h3><a href="{% static 'home_resource/blog-detail.html' %}">The Business metting room interior in the rank.</a></h3>
                             <ul class="info">
                                 <li>06 June 2018,</li>
                                 <li>John Smith</li>
@@ -808,16 +808,16 @@
             <div class="sponsors-outer">
                 <!--Sponsors Carousel-->
                 <ul class="sponsors-carousel owl-carousel owl-theme">
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/1.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/2.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/3.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/4.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/5.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/1.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/2.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/3.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/4.png' %}" alt=""></a></figure></li>
-                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'images/clients/5.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/1.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/2.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/3.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/4.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/5.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/1.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/2.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/3.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/4.png' %}" alt=""></a></figure></li>
+                    <li class="slide-item"><figure class="image-box"><a href="#"><img src="{% static 'home_resource/images/clients/5.png' %}" alt=""></a></figure></li>
                 </ul>
             </div>
         </div>
@@ -826,7 +826,7 @@
 
 
     <!-- Main Footer -->
-    <footer class="main-footer" style="background-image: url(/static/images/background/5.jpg);">
+    <footer class="main-footer" style="background-image: url(/static/home_resource/images/background/5.jpg);">
         <div class="auto-container">
             <!--Widgets Section-->
             <div class="widgets-section">
@@ -839,7 +839,7 @@
                                 <div class="footer-widget about-widget">
                                     <div class="footer-logo">
                                         <figure>
-                                            <a href="{% static 'index-2.html' %}"><img src="{% static 'images/footer-logo.png' %}" alt=""></a>
+                                            <a href="{% static 'home_resource/index-2.html' %}"><img src="{% static 'home_resource/images/footer-logo.png' %}" alt=""></a>
                                         </figure>
                                     </div>
                                     <div class="widget-content">
@@ -855,8 +855,8 @@
                                      <!--Footer Column-->
                                     <div class="widget-content">
                                         <div class="post">
-                                            <div class="thumb"><a href="{% static 'blog-detail.html' %}"><img src="{% static 'images/resource/post-thumb-1.jpg' %}" alt=""></a></div>
-                                            <h4><a href="{% static 'blog-detail.html' %}">Triangle Concrete House on lake</a></h4>
+                                            <div class="thumb"><a href="{% static 'home_resource/blog-detail.html' %}"><img src="{% static 'home_resource/images/resource/post-thumb-1.jpg' %}" alt=""></a></div>
+                                            <h4><a href="{% static 'home_resource/blog-detail.html' %}">Triangle Concrete House on lake</a></h4>
                                             <ul class="info">
                                                 <li>26 Aug</li>
                                                 <li>3 Comments</li>
@@ -864,8 +864,8 @@
                                         </div>
 
                                         <div class="post">
-                                            <div class="thumb"><a href="{% static 'blog-detail.html' %}"><img src="{% static 'images/resource/post-thumb-2.jpg' %}" alt=""></a></div>
-                                            <h4><a href="{% static 'blog-detail.html' %}">The Amazing Interior for the Hotel art</a></h4>
+                                            <div class="thumb"><a href="{% static 'home_resource/blog-detail.html' %}"><img src="{% static 'home_resource/images/resource/post-thumb-2.jpg' %}" alt=""></a></div>
+                                            <h4><a href="{% static 'home_resource/blog-detail.html' %}">The Amazing Interior for the Hotel art</a></h4>
                                             <ul class="info">
                                                 <li>26 Aug</li>
                                                 <li>3 Comments</li>
@@ -885,11 +885,11 @@
                                     <h2 class="widget-title">Useful links</h2>
                                     <div class="widget-content">
                                         <ul class="list">
-                                            <li><a href="{% static 'about.html' %}">About</a></li>
-                                            <li><a href="{% static 'services.html' %}">Services</a></li>
-                                            <li><a href="{% static 'projects.html' %}">Project</a></li>
-                                            <li><a href="{% static 'blog-classic.html' %}">News</a></li>
-                                            <li><a href="{% static 'contact.html' %}">Contact Us</a></li>
+                                            <li><a href="{% static 'home_resource/about.html' %}">About</a></li>
+                                            <li><a href="{% static 'home_resource/services.html' %}">Services</a></li>
+                                            <li><a href="{% static 'home_resource/projects.html' %}">Project</a></li>
+                                            <li><a href="{% static 'home_resource/blog-classic.html' %}">News</a></li>
+                                            <li><a href="{% static 'home_resource/contact.html' %}">Contact Us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -902,27 +902,27 @@
                                     <div class="widget-content">
                                         <div class="outer clearfix">
                                             <figure class="image">
-                                                <a href="{% static 'images/gallery/1.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'images/resource/work-thumb-1.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/1.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-1.jpg' %}" alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'images/gallery/2.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'images/resource/work-thumb-2.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/2.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-2.jpg' %}" alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'images/gallery/3.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'images/resource/work-thumb-3.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/3.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-3.jpg' %}" alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'images/gallery/4.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'images/resource/work-thumb-4.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/4.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-4.jpg' %}" alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'images/gallery/5.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'images/resource/work-thumb-5.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/5.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-5.jpg' %}" alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'images/gallery/1.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'images/resource/work-thumb-6.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/1.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-6.jpg' %}" alt=""></a>
                                             </figure>
                                         </div>
                                     </div>       
@@ -949,7 +949,7 @@
                     </div>
                     
                     <div class="copyright-text">
-                       <a href="{% static 'https://www.templateshub.net'%}" target="_blank">Templates Hub</a>
+                       <a href="{% static 'home_resource/https://www.templateshub.net'%}" target="_blank">Templates Hub</a>
                     </div>
                 </div>
             </div>
@@ -963,17 +963,17 @@
 
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div>
-<script src="{% static 'js/home_jquery.js' %}"></script> 
-<script src="{% static 'js/home_popper.min.js' %}"></script>
-<script src="{% static 'js/home_bootstrap.min.js' %}"></script>
-<script src="{% static 'js/home_jquery.fancybox.js' %}"></script>
-<script src="{% static 'js/home_owl.js' %}"></script>
-<script src="{% static 'js/home_wow.js' %}"></script>
-<script src="{% static 'js/home_appear.js' %}"></script>
-<script src="{% static 'js/home_mixitup.js' %}"></script>
-<script src="{% static 'js/home_script.js' %}"></script>
+<script src="{% static 'home_resource/js/jquery.js' %}"></script> 
+<script src="{% static 'home_resource/js/popper.min.js' %}"></script>
+<script src="{% static 'home_resource/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'home_resource/js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'home_resource/js/owl.js' %}"></script>
+<script src="{% static 'home_resource/js/wow.js' %}"></script>
+<script src="{% static 'home_resource/js/appear.js' %}"></script>
+<script src="{% static 'home_resource/js/mixitup.js' %}"></script>
+<script src="{% static 'home_resource/js/script.js' %}"></script>
 <!-- Color Setting -->
-<script src="{% static 'js/home_color-settings.js' %}"></script>
+<script src="{% static 'home_resource/js/color-settings.js' %}"></script>
 </body>
 
 <!-- index26:42-->
