@@ -55,31 +55,24 @@ def userprofile(request,pk=None):
 	return render(request,'userprofile.html',{'user':user})
 
 
-@login_required
 def Homepage(request):
 	return render(request,'home.html')
 
-@login_required
 def Aboutpage(request):
 	return render(request,'about.html')
 
-@login_required
 def Servicepage(request):
 	return render(request,'services.html')
 
-@login_required
 def Projectpage(request):
 	return render(request,'projects.html')
 
-@login_required
 def Contactpage(request):
 	return render(request,'contact.html')
 
-@login_required
 def Teampage(request):
 	return render(request,'team.html')
 
-@login_required
 def Faqpage(request):
 	return render(request,'faq.html')
 
