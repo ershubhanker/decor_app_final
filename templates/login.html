@@ -13,6 +13,8 @@
 </body>
 </html> -->
 {% load static %}
+{% load socialaccount %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -77,7 +79,7 @@
                 <!-- <a href="#" class="btn btn-block py-2 btn-facebook">
                   <span class="icon-facebook mr-3"></span> Login with facebook
                 </a> -->
-                <a href="#" class="btn btn-block py-2 btn-google"><span class="icon-google mr-3"></span> Login with Google</a>
+                <a href="{% provider_login_url 'google' %}" class="btn btn-block py-2 btn-google"><span class="icon-google mr-3"></span> Login with Google</a>
                 </div>
 				        <span class="text d-block">Don't have an acoount <a href="{% url 'myapp:signup' %}" class="forgot-pass">Sign up</a></span>
               </form>

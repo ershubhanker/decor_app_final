@@ -15,4 +15,5 @@ urlpatterns = [
     path('contact/', views.Contactpage,name='contact'),
     path('faq/', views.Faqpage,name='faq'),
     path('team/', views.Teampage,name='team'),
+    path('kitchen/', views.kitchenmodel,name='kitchen'),
 ]

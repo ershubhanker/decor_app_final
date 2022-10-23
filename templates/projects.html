@@ -3,74 +3,78 @@
 <html lang="en">
 
 <!-- projects27:09-->
-<head>
-<meta charset="utf-8">
-<title>Contra - Interior Creator HTML Template | Projects</title>
-<!-- Stylesheets -->
-<link href="{% static 'home_resource/css/bootstrap.css' %}" rel="stylesheet">
-<link href="{% static 'home_resource/css/style.css' %}" rel="stylesheet">
-<link href="{% static 'home_resource/css/responsive.css' %}" rel="stylesheet">   
-<!--Color Switcher Mockup-->
-<link href="{% static 'home_resource/css/color-switcher-design.css' %}" rel="stylesheet">
-<!--Color Themes-->
-<link id="theme-color-file" href="{% static 'home_resource/css/color-themes/default-theme.css' %}" rel="stylesheet">
 
-<link rel="shortcut icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
-<link rel="icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Contra - Interior Creator HTML Template | Projects</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'home_resource/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'home_resource/css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'home_resource/css/responsive.css' %}" rel="stylesheet">
+    <!--Color Switcher Mockup-->
+    <link href="{% static 'home_resource/css/color-switcher-design.css' %}" rel="stylesheet">
+    <!--Color Themes-->
+    <link id="theme-color-file" href="{% static 'home_resource/css/color-themes/default-theme.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
 
-<div class="page-wrapper">
-    <!-- Preloader -->
-    <div class="preloader"></div>
-    
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
         <!-- Main Header-->
-    <header class="main-header header-style-four">
-        <div class="header-top">
-            <div class="auto-container clearfix">
-                <div class="top-right">
-                    <ul class="contact-info">
-                        <li><span>PHONE :</span> (+84) 867-557-243</li>
-                        <li><span>EMAIL :</span> <a href="#">Support@yourdomain.com</a></li>
-                    </ul>  
+        <header class="main-header header-style-four">
+            <div class="header-top">
+                <div class="auto-container clearfix">
+                    <div class="top-right">
+                        <ul class="contact-info">
+                            <li><span>PHONE :</span> (+84) 867-557-243</li>
+                            <li><span>EMAIL :</span> <a href="#">Support@yourdomain.com</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="header-lower">
-            <div class="auto-container">
-                <div class="main-box clearfix">
-                    <div class="logo-box">
-                        <div class="logo"><a href="{% url 'myapp:home' %}"><img src="{% static 'home_resource/images/logo-2.png' %}" alt="" title=""></a></div>
-                    </div>
+            <div class="header-lower">
+                <div class="auto-container">
+                    <div class="main-box clearfix">
+                        <div class="logo-box">
+                            <div class="logo"><a href="{% url 'myapp:home' %}"><img
+                                        src="{% static 'home_resource/images/logo-2.png' %}" alt="" title=""></a></div>
+                        </div>
 
-                    <div class="nav-outer">
-                        <!-- Main Menu -->
-                        <nav class="main-menu navbar-expand-md ">
-                            <div class="navbar-header">
-                                <!-- Toggle Button -->      
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="icon flaticon-menu-button"></span>
-                                </button>
-                            </div>
-                            
-                            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li><a href="{% url 'myapp:home' %}">Home</a></li>
-                                    <li><a href="{% url 'myapp:about' %}">About</a></li>
-                                    <li><a href="{% url 'myapp:service' %}">Services</a></li>
-                                    <li><a href="{% url 'myapp:project' %}">Projects</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
-                                    <li><a href="{% url 'myapp:login' %}">Login</a></li>
-                                    <!-- <li class="dropdown"><a href="#">Home</a>
+                        <div class="nav-outer">
+                            <!-- Main Menu -->
+                            <nav class="main-menu navbar-expand-md ">
+                                <div class="navbar-header">
+                                    <!-- Toggle Button -->
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="icon flaticon-menu-button"></span>
+                                    </button>
+                                </div>
+
+                                <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                    <ul class="navigation clearfix">
+                                        <li><a href="{% url 'myapp:home' %}">Home</a></li>
+                                        <li><a href="{% url 'myapp:about' %}">About</a></li>
+                                        <li><a href="{% url 'myapp:service' %}">Services</a></li>
+                                        <li><a href="{% url 'myapp:project' %}">Projects</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Shop</a></li>
+                                        <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
+                                        <li><a href="{% url 'myapp:login' %}">Login</a></li>
+                                        <!-- <li class="dropdown"><a href="#">Home</a>
                                         <ul>
                                             <li class="dropdown"><a href="#">Header Styles</a>
                                                 <ul>
@@ -181,89 +185,110 @@
                                             </div>
                                         </div>
                                     </li> -->
-                                </ul> 
-                            </div>
-                        </nav><!-- Main Menu End-->                        
-
-                        <!-- Outer Box-->
-                        <div class="outer-box">
-                            <!--Search Box-->
-                            <div class="search-box-outer">
-                                <div class="dropdown">
-                                    <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
-                                    <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
-                                        <li class="panel-outer">
-                                            <div class="form-container">
-                                                <form method="post" action="#">
-                                                    <div class="form-group">
-                                                        <input type="search" name="field-name" value="" placeholder="Search Here" required>
-                                                        <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </li>
                                     </ul>
                                 </div>
+                            </nav><!-- Main Menu End-->
+
+                            <!-- Outer Box-->
+                            <div class="outer-box">
+                                <!--Search Box-->
+                                <div class="search-box-outer">
+                                    <div class="dropdown">
+                                        <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                                                class="fa fa-search"></span></button>
+                                        <ul class="dropdown-menu pull-right search-panel"
+                                            aria-labelledby="dropdownMenu3">
+                                            <li class="panel-outer">
+                                                <div class="form-container">
+                                                    <form method="post" action="#">
+                                                        <div class="form-group">
+                                                            <input type="search" name="field-name" value=""
+                                                                placeholder="Search Here" required>
+                                                            <button type="submit" class="search-btn"><span
+                                                                    class="fa fa-search"></span></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <!--End Main Header -->
-    
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url(/static/home_resource/images/background/10.jpg);">
-        <div class="auto-container">
-            <div class="inner-container clearfix">
-                <div class="title-box">
-                    <h1>Projects</h1>
-                    <span class="title">The Interior speak for themselves</span>
-                </div>
-                <ul class="bread-crumb clearfix">
-                    <li><a href="{% url 'myapp:home' %}">Home</a></li>
-                    <li>Projects</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--End Page Title-->
+        </header>
+        <!--End Main Header -->
 
-    <!-- Projects Section -->
-    <section class="projects-section alternate">
-        <div class="auto-container">
-             <!--MixitUp Galery-->
-            <div class="mixitup-gallery">
-                <!--Filter-->
-                <div class="filters text-center clearfix">                     
-                    <ul class="filter-tabs filter-btns clearfix">
-                        <li class="active filter" data-role="button" data-filter="all">All</li>
-                        <li class="filter" data-role="button" data-filter=".commercial">COMMERCIAL</li>
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(/static/home_resource/images/background/10.jpg);">
+            <div class="auto-container">
+                <div class="inner-container clearfix">
+                    <div class="title-box">
+                        <h1>Projects</h1>
+                        <span class="title">The Interior speak for themselves</span>
+                    </div>
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="{% url 'myapp:home' %}">Home</a></li>
+                        <li>Projects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <!-- Projects Section -->
+        <section class="projects-section alternate">
+            <div class="auto-container">
+                <!--MixitUp Galery-->
+                <div class="mixitup-gallery">
+                    <!--Filter-->
+                    <div class="filters text-center clearfix">
+                        <ul class="filter-tabs filter-btns clearfix">
+                            <li class="active filter" data-role="button" data-filter="all">All</li>
+                            {% for value in room_cat %}
+                            <li class="filter" data-role="button" data-filter=.{{value.RoomCategory}}>
+                                {{value.RoomCategory}}</li>
+                            {% endfor %}
+                            <!-- <li class="filter" data-role="button" data-filter=".commercial">COMMERCIAL</li>
                         <li class="filter" data-role="button" data-filter=".landescape">LANDESCAPE</li>
                         <li class="filter" data-role="button" data-filter=".interior">INTERIOR</li>
-                        <li class="filter" data-role="button" data-filter=".architecture">ARCHITECTURE</li>
-                    </ul>                                                  
-                </div>
-                                            
-                <div class="filter-list row">
-                    <!-- Project Block -->
-                    <div class="project-block all mix interior architecture landescape col-lg-4 col-md-6 col-sm-12">
-                        <div class="image-box">
-                            <figure class="image"><img src="{% static 'home_resource/images/gallery/2-1.jpg' %}" alt=""></figure>
-                            <div class="overlay-box">
-                                <h4><a href="{% url 'myapp:project' %}">Laxury Home <br>Project</a></h4>
-                                <div class="btn-box">
-                                    <a href="{% static 'home_resource/images/gallery/2-1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="{% url 'myapp:project' %}"><i class="fa fa-external-link"></i></a>
+                        <li class="filter" data-role="button" data-filter=".architecture">ARCHITECTURE</li> -->
+                        </ul>
+                    </div>
+
+                    <div class="filter-list row">
+                        {% for room_value in room %}
+                        <!-- Project Block -->
+                        <!-- <div class="project-block all mix architecture landescape col-lg-4 col-md-6 col-sm-12"> -->
+                        {% for cat_value in room_cat %}
+                        {% if room_value.roomcategory_id == cat_value.id %}
+                        <div class="project-block all mix {{cat_value.RoomCategory}} col-lg-4 col-md-6 col-sm-12">
+                            {% endif %}
+                            {% endfor %}
+                            <div class="image-box">
+                                <!-- <figure class="image"><img src="{% static 'home_resource/images/gallery/2-1.jpg' %}" alt=""></figure> -->
+                                <figure class="image"><img src="/upload/{{room_value.upload}}" alt=""></figure>
+                                <div class="overlay-box">
+                                    <h4><a href="{% url 'myapp:project' %}">Luxury Home<br>Project</a></h4>
+                                    <div class="btn-box">
+                                        <!-- <a href="{% static 'home_resource/images/gallery/2-1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
+                                        <a href="/upload/{{room_value.upload}}" class="lightbox-image"
+                                            data-fancybox="gallery"><i class="fa fa-search"></i></a>
+                                        <a href="{% url 'myapp:kitchen' %}"><i class="fa fa-external-link"></i></a>
+                                    </div>
+                                    <!-- <span class="tag">{{room_value.RoomCategory}}</span> -->
+                                    <!-- <span class="tag">{{room_category_name}}</span> -->
                                 </div>
-                                <span class="tag">Architecture</span>
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
 
                     <!-- Project Block -->
-                    <div class="project-block all mix landescape architecture col-lg-8 col-md-6 col-sm-12">
+                    <!-- <div class="project-block all mix landescape architecture col-lg-8 col-md-6 col-sm-12">
                         <div class="image-box">
                             <figure class="image"><img src="{% static 'home_resource/images/gallery/2-2.jpg' %}" alt=""></figure>
                             <div class="overlay-box">
@@ -275,10 +300,10 @@
                                 <span class="tag">Architecture</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Project Block -->
-                    <div class="project-block all mix landescape interior col-lg-6 col-md-6 col-sm-12">
+                    <!-- <div class="project-block all mix landescape interior col-lg-6 col-md-6 col-sm-12">
                         <div class="image-box">
                             <figure class="image"><img src="{% static 'home_resource/images/gallery/2-3.jpg' %}" alt=""></figure>
                             <div class="overlay-box">
@@ -290,10 +315,10 @@
                                 <span class="tag">Architecture</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Project Block -->
-                    <div class="project-block all mix landescape commercial architecture col-lg-6 col-md-6 col-sm-12">
+                    <!-- <div class="project-block all mix landescape commercial architecture col-lg-6 col-md-6 col-sm-12">
                         <div class="image-box">
                             <figure class="image"><img src="{% static 'home_resource/images/gallery/2-4.jpg' %}" alt=""></figure>
                             <div class="overlay-box">
@@ -305,10 +330,10 @@
                                 <span class="tag">Architecture</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Project Block -->
-                    <div class="project-block all mix landescape interior col-lg-4 col-md-6 col-sm-12">
+                    <!-- <div class="project-block all mix landescape interior col-lg-4 col-md-6 col-sm-12">
                         <div class="image-box">
                             <figure class="image"><img src="{% static 'home_resource/images/gallery/2-5.jpg' %}" alt=""></figure>
                             <div class="overlay-box">
@@ -320,10 +345,10 @@
                                 <span class="tag">Architecture</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Project Block -->
-                    <div class="project-block all mix landescape commercial interior col-lg-4 col-md-6 col-sm-12">
+                    <!-- <div class="project-block all mix landescape commercial interior col-lg-4 col-md-6 col-sm-12">
                         <div class="image-box">
                             <figure class="image"><img src="{% static 'home_resource/images/gallery/2-6.jpg' %}" alt=""></figure>
                             <div class="overlay-box">
@@ -335,10 +360,10 @@
                                 <span class="tag">Architecture</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Project Block -->
-                    <div class="project-block all mix landescape interior col-lg-4 col-md-6 col-sm-12">
+                    <!-- <div class="project-block all mix landescape interior col-lg-4 col-md-6 col-sm-12">
                         <div class="image-box">
                             <figure class="image"><img src="{% static 'home_resource/images/gallery/2-7.jpg' %}" alt=""></figure>
                             <div class="overlay-box">
@@ -350,7 +375,7 @@
                                 <span class="tag">Architecture</span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -365,7 +390,7 @@
                     <li class="next-post"><a href="#"> Next <span class="fa fa-long-arrow-right"></span> </a></li>
                 </ul>
             </div>
-        </div>
+    </div>
     </section>
 
 
@@ -384,23 +409,29 @@
                                 <div class="footer-widget about-widget">
                                     <div class="footer-logo">
                                         <figure>
-                                            <a href="{% url 'myapp:home' %}"><img src="/static/home_resource/images/footer-logo.png" alt=""></a>
+                                            <a href="{% url 'myapp:home' %}"><img
+                                                    src="/static/home_resource/images/footer-logo.png" alt=""></a>
                                         </figure>
                                     </div>
                                     <div class="widget-content">
-                                        <div class="text">Contra and layouts, in content of dummy text is nonsensical.typefaces of dummy text is appearance of different general the content of dummy text is nonsensical. typefaces of dummy text is nonsensical.</div>
+                                        <div class="text">Contra and layouts, in content of dummy text is
+                                            nonsensical.typefaces of dummy text is appearance of different general the
+                                            content of dummy text is nonsensical. typefaces of dummy text is
+                                            nonsensical.</div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <!--Footer Column-->
                             <div class="footer-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="footer-widget recent-posts">
                                     <h2 class="widget-title">Recent Posts</h2>
-                                     <!--Footer Column-->
+                                    <!--Footer Column-->
                                     <div class="widget-content">
                                         <div class="post">
-                                            <div class="thumb"><a href="#"><img src="{% static 'home_resource/images/resource/post-thumb-1.jpg' %}" alt=""></a></div>
+                                            <div class="thumb"><a href="#"><img
+                                                        src="{% static 'home_resource/images/resource/post-thumb-1.jpg' %}"
+                                                        alt=""></a></div>
                                             <h4><a href="#">Triangle Concrete House on lake</a></h4>
                                             <ul class="info">
                                                 <li>26 Aug</li>
@@ -409,7 +440,9 @@
                                         </div>
 
                                         <div class="post">
-                                            <div class="thumb"><a href="#"><img src="{% static 'home_resource/images/resource/post-thumb-2.jpg' %}" alt=""></a></div>
+                                            <div class="thumb"><a href="#"><img
+                                                        src="{% static 'home_resource/images/resource/post-thumb-2.jpg' %}"
+                                                        alt=""></a></div>
                                             <h4><a href="#">The Amazing Interior for the Hotel art</a></h4>
                                             <ul class="info">
                                                 <li>26 Aug</li>
@@ -418,15 +451,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>         
+                            </div>
                         </div>
                     </div>
-                    
+
                     <!--Big Column-->
                     <div class="big-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
                         <div class="row clearfix">
                             <div class="footer-column col-xl-5 col-lg-6 col-md-6 col-sm-12">
-                                 <div class="footer-widget links-widget">
+                                <div class="footer-widget links-widget">
                                     <h2 class="widget-title">Useful links</h2>
                                     <div class="widget-content">
                                         <ul class="list">
@@ -447,30 +480,48 @@
                                     <div class="widget-content">
                                         <div class="outer clearfix">
                                             <figure class="image">
-                                                <a href="{% static 'home_resource/images/gallery/1.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-1.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/1.jpg' %}"
+                                                    class="lightbox-image" title="Image Title Here"><img
+                                                        src="{% static 'home_resource/images/resource/work-thumb-1.jpg' %}"
+                                                        alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'home_resource/images/gallery/2.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-2.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/2.jpg' %}"
+                                                    class="lightbox-image" title="Image Title Here"><img
+                                                        src="{% static 'home_resource/images/resource/work-thumb-2.jpg' %}"
+                                                        alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'home_resource/images/gallery/3.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-3.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/3.jpg' %}"
+                                                    class="lightbox-image" title="Image Title Here"><img
+                                                        src="{% static 'home_resource/images/resource/work-thumb-3.jpg' %}"
+                                                        alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'home_resource/images/gallery/4.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-4.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/4.jpg' %}"
+                                                    class="lightbox-image" title="Image Title Here"><img
+                                                        src="{% static 'home_resource/images/resource/work-thumb-4.jpg' %}"
+                                                        alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'home_resource/images/gallery/5.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-5.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/5.jpg' %}"
+                                                    class="lightbox-image" title="Image Title Here"><img
+                                                        src="{% static 'home_resource/images/resource/work-thumb-5.jpg' %}"
+                                                        alt=""></a>
                                             </figure>
 
                                             <figure class="image">
-                                                <a href="{% static 'home_resource/images/gallery/1.jpg' %}" class="lightbox-image" title="Image Title Here"><img src="{% static 'home_resource/images/resource/work-thumb-6.jpg' %}" alt=""></a>
+                                                <a href="{% static 'home_resource/images/gallery/1.jpg' %}"
+                                                    class="lightbox-image" title="Image Title Here"><img
+                                                        src="{% static 'home_resource/images/resource/work-thumb-6.jpg' %}"
+                                                        alt=""></a>
                                             </figure>
                                         </div>
-                                    </div>       
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -478,7 +529,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!--Footer Bottom-->
         <div class="footer-bottom">
             <div class="auto-container">
@@ -492,9 +543,9 @@
                             <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="copyright-text">
-                       <a href="https://www.templateshub.net" target="_blank">Templates Hub</a>
+                        <a href="https://www.templateshub.net" target="_blank">Templates Hub</a>
                     </div>
                 </div>
             </div>
@@ -502,24 +553,25 @@
     </footer>
     <!-- End Main Footer -->
 
-</div>
+    </div>
 
 
 
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div>
-<script src="{% static 'home_resource/js/jquery.js' %}"></script> 
-<script src="{% static 'home_resource/js/popper.min.js' %}"></script>
-<script src="{% static 'home_resource/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'home_resource/js/jquery.fancybox.js' %}"></script>
-<script src="{% static 'home_resource/js/owl.js' %}"></script>
-<script src="{% static 'home_resource/js/wow.js' %}"></script>
-<script src="{% static 'home_resource/js/appear.js' %}"></script>
-<script src="{% static 'home_resource/js/mixitup.js' %}"></script>
-<script src="{% static 'home_resource/js/script.js' %}"></script>
-<!-- Color Setting -->
-<script src="{% static 'home_resource/js/color-settings.js' %}"></script>
+    <!--Scroll to top-->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div>
+    <script src="{% static 'home_resource/js/jquery.js' %}"></script>
+    <script src="{% static 'home_resource/js/popper.min.js' %}"></script>
+    <script src="{% static 'home_resource/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'home_resource/js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'home_resource/js/owl.js' %}"></script>
+    <script src="{% static 'home_resource/js/wow.js' %}"></script>
+    <script src="{% static 'home_resource/js/appear.js' %}"></script>
+    <script src="{% static 'home_resource/js/mixitup.js' %}"></script>
+    <script src="{% static 'home_resource/js/script.js' %}"></script>
+    <!-- Color Setting -->
+    <script src="{% static 'home_resource/js/color-settings.js' %}"></script>
 </body>
 
 <!-- projects27:14-->
+
 </html>

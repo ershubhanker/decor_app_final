@@ -29,6 +29,10 @@ ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ['https://*.ngrok.io/','https://*.127.0.0.1']
 
+SOCIALACCOUNT_LOGIN_ON_GET=True
+
+LOGIN_REDIRECT_URL = "myapp:home"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+
+    'django.contrib.sites',
+    
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +93,10 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -101,6 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

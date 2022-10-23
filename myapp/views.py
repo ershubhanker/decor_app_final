@@ -1,7 +1,7 @@
-from django.shortcuts import render,redirect,HttpResponseRedirect
-from .forms import UserLoginForm,SignupUser
-from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.models import User,Permission
+from django.shortcuts import render, redirect, HttpResponseRedirect
+from .forms import UserLoginForm, SignupUser
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User, Permission
 from django.contrib.auth.decorators import login_required
 from .models import *
 from json import dumps
@@ -10,21 +10,25 @@ import ast
 from django.core import serializers
 
 # user Login page function
+
+
 def Userlogin(request):
 	if request.method == 'POST':
 		loginForm = UserLoginForm(request.POST or None)
 		if loginForm.is_valid():
 			username = loginForm.cleaned_data.get('username')
 			password = loginForm.cleaned_data.get('password')
-			user = authenticate(username=username,password=password)
+			user = authenticate(username=username, password=password)
 			if user.is_active:
-				login(request,user)
+				login(request, user)
 				return redirect('/myapp/home')
 	else:
 		loginForm = UserLoginForm()
-	return render(request,'login.html',{'loginForm':loginForm})
+	return render(request, 'login.html', {'loginForm': loginForm})
 
 # user Signup page function
+
+
 def signupform(request):
 	if request.method == 'POST':
 		UserRegister = SignupUser(request.POST or None)
@@ -32,11 +36,11 @@ def signupform(request):
 			UserRegister.save()
 			username = UserRegister.cleaned_data.get('username')
 			password = UserRegister.cleaned_data.get('password')
-			user = authenticate(username=username,password=password)
+			user = authenticate(username=username, password=password)
 			return HttpResponseRedirect("/myapp/login")
 	else:
 		UserRegister = SignupUser()
-	return render(request,'signup.html',{'UserRegister':UserRegister})
+	return render(request, 'signup.html', {'UserRegister': UserRegister})
 
 
 @login_required
@@ -46,26 +50,31 @@ def UserLogout(request):
 
 
 @login_required
-def userprofile(request,pk=None):
+def userprofile(request, pk=None):
 	if pk:
 		user = User.objects.get(pk=pk)
 	else:
 		user = request.user
 	print(user)
-	return render(request,'userprofile.html',{'user':user})
+	return render(request, 'userprofile.html', {'user': user})
 
 
 def Homepage(request):
-	return render(request,'home.html')
+	return render(request, 'home.html')
+
 
 def Aboutpage(request):
-	return render(request,'about.html')
+	return render(request, 'about.html')
+
 
 def Servicepage(request):
-	return render(request,'services.html')
+	return render(request, 'services.html')
+
 
 def Projectpage(request):
-	return render(request,'projects.html')
+	room_cat = list(RoomCategory.objects.values())
+	room = list(Room.objects.values())
+	return render(request,'projects.html',{"room_cat":room_cat,"room":room})
 
 def Contactpage(request):
 	return render(request,'contact.html')
@@ -91,7 +100,13 @@ def Faqpage(request):
 
 
 
-# def kitchenmodel(request):
-# 	val = list(Room.objects.values())
-	
-# 	return render(request,'kitchen.html')
+def kitchenmodel(request):
+	val = list(Room.objects.values())
+	print(val)
+
+	newval = []
+	for i in val:
+		newval.append(i['upload'])
+	print(newval[0])
+
+	return render(request,'kitchen.html')
