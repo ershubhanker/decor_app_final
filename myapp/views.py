@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect, get_object_or_404
 from .forms import UserLoginForm, SignupUser
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User, Permission
@@ -101,12 +101,9 @@ def Faqpage(request):
 
 
 def kitchenmodel(request):
-	val = list(Room.objects.values())
-	print(val)
-
-	newval = []
-	for i in val:
-		newval.append(i['upload'])
-	print(newval[0])
-
+	# val = list(Room.objects.values())
+	# model_path = request.GET.get('path','').split("/")[-1]
+	# newval = []
+	# for i in val:
+	# 	newval.append(i['upload'])
 	return render(request,'kitchen.html')

@@ -270,14 +270,14 @@
                             {% endfor %}
                             <div class="image-box">
                                 <!-- <figure class="image"><img src="{% static 'home_resource/images/gallery/2-1.jpg' %}" alt=""></figure> -->
-                                <figure class="image"><img src="/upload/{{room_value.upload}}" alt=""></figure>
+                                <figure class="image"><img src="/upload/{{room_value.room_img}}" alt=""></figure>
                                 <div class="overlay-box">
                                     <h4><a href="{% url 'myapp:project' %}">Luxury Home<br>Project</a></h4>
                                     <div class="btn-box">
                                         <!-- <a href="{% static 'home_resource/images/gallery/2-1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
-                                        <a href="/upload/{{room_value.upload}}" class="lightbox-image"
-                                            data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                        <a href="{% url 'myapp:kitchen' %}"><i class="fa fa-external-link"></i></a>
+                                        <!-- <a href="/upload/{{room_value.room_img}}" class="lightbox-image"
+                                            data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
+                                        <a href="{% url 'myapp:kitchen'%}?path={{room_value.upload}}" ><i class="fa fa-external-link"></i></a>
                                     </div>
                                     <!-- <span class="tag">{{room_value.RoomCategory}}</span> -->
                                     <!-- <span class="tag">{{room_category_name}}</span> -->
@@ -570,6 +570,8 @@
     <script src="{% static 'home_resource/js/script.js' %}"></script>
     <!-- Color Setting -->
     <script src="{% static 'home_resource/js/color-settings.js' %}"></script>
+    <!-- Test File -->
+    <script src="{% static 'test.js' %}"></script>
 </body>
 
 <!-- projects27:14-->

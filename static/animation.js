@@ -21,7 +21,7 @@ var wallCabinet = "";
 const scene = new BABYLON.Scene(engine);
 
 // /**** Set camera and light *****/
-const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI/2.5 , Math.PI/2.5 , 5, new BABYLON.Vector3(0, 1, 0));
+const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI/2.5 , Math.PI/2.5 , 15, new BABYLON.Vector3(0, 1, 0));
 camera.attachControl(canvas, true);
 camera.lowerRadiusLimit = 3;
 camera.upperRadiusLimit = 3;
@@ -35,7 +35,15 @@ const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0.5, 0.6
 
 const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10},scene);
 
-const result = BABYLON.SceneLoader.ImportMeshAsync("", "/static/models/", "YOS P kitchen.glb",scene).then((result) => {
+var page_url = window.location.href
+var model_name = page_url.split("/")[6];
+// console.log(model_name)
+// function set_model_name(_name){
+//     model_name = _name.split("/")[1];
+//     console.log("The function has been called!");
+// }
+
+const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_name,scene).then((result) => {
     
     
     // It gives value of all the present components in a model
@@ -88,6 +96,7 @@ return scene;
 };
 
 createScene();
+
 
 function changeWall(_src){
     console.log(_src)

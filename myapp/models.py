@@ -12,7 +12,6 @@ ROOM_CHOICES = (
 # declaring a Room Model
 
 class RoomCategory(models.Model):
-      room_img = models.ImageField(blank=True,upload_to ='img/')
       RoomCategory = models.CharField(
         max_length = 20,
         choices = ROOM_CHOICES,
@@ -26,3 +25,4 @@ class RoomCategory(models.Model):
 class Room(models.Model):
   upload = models.FileField(upload_to ='models/')
   roomcategory = models.ForeignKey(RoomCategory, on_delete=models.CASCADE)
+  room_img = models.ImageField(blank=True,upload_to ='img/')

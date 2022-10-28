@@ -16,4 +16,12 @@ function requestmodel(callback) {
     
 }
 
+var model_path = "This is my path";
+function get_model_name(path) {
+  console.log(model_path);
+  model_path = path.split("/")[1]
+  console.log(model_path);
+}
+
+
 // requestmodel();
