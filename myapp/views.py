@@ -100,10 +100,10 @@ def Faqpage(request):
 
 
 
-def kitchenmodel(request):
+def rendermodel(request):
 	# val = list(Room.objects.values())
 	# model_path = request.GET.get('path','').split("/")[-1]
 	# newval = []
 	# for i in val:
 	# 	newval.append(i['upload'])
-	return render(request,'kitchen.html')
+	return render(request,'render.html')
