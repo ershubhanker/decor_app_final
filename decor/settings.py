@@ -141,3 +141,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
+
+LOGIN_URL = '/myapp/login/'
+LOGIN_REDIRECT_URL = "/"

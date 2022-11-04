@@ -99,7 +99,7 @@ def Faqpage(request):
 # 	return JsonResponse(response, status=200)
 
 
-
+@login_required
 def rendermodel(request):
 	# val = list(Room.objects.values())
 	# model_path = request.GET.get('path','').split("/")[-1]

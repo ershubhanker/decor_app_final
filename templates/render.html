@@ -73,6 +73,7 @@
     <link href="{% static 'home_resource/css/bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'home_resource/css/style.css' %}" rel="stylesheet">
     <link href="{% static 'home_resource/css/responsive.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'render page/style.css' %}">
     <!--Color Switcher Mockup-->
     <link href="{% static 'home_resource/css/color-switcher-design.css' %}" rel="stylesheet">
     <!--Color Themes-->
@@ -196,37 +197,36 @@
             <div class="container-fluid">
                 <div class="row no-gutters">
                     <div class="image-column col-lg-2 col-md-12 col-sm-12">
-                        <form action="" style="padding-right: 10px; font-size:20px; color:black">
-                            <div class="mb-3">
-                                <label for="floor" class="form-label">Floor File</label>
-                                <input class="form-control form-control-sm" id="floor" type="file">
+                        <div style="padding-right: 10px; font-size:20px; color:black">
+                            <button class="collapsible">Floor</button>
+                            <div class="content">
+                                <input class="form-control form-control-sm" onchange="printColor(event)" id="floor_input" type="file" style="margin-bottom: 10px;" multiple>
                             </div>
-
-                            <div class="mb-3">
-                                <label for="cabinet" class="form-label">Cabinet</label>
-                                <input type="color" class="form-control form-control-color w-25" id="cabinet"
-                                    value="#563d7c" title="Choose your color">
+                            <button class="collapsible">Cabinet</button>
+                            <div class="content">
+                                <input type="color" class="form-control form-control-color w-25 " id="cabinet"
+                                    value="#563d7c" title="Choose your color" onchange="printColor(event)" style="margin-bottom: 10px; padding: 2px 5px 2px 5px;">
                             </div>
-                            <div class="mb-3">
-                                <label for="handlesCabinet" class="form-label">Handles of Cabinet</label>
-                                <input type="color" class="form-control form-control-color w-25" id="handlesCabinet"
-                                    value="#563d7c" title="Choose your color">
+                            <button class="collapsible">Handles of Cabinet</button>
+                            <div class="content">
+                                <input type="color" class="form-control form-control-color w-25 " id="handlesCabinet"
+                                    value="#563d7c" title="Choose your color" onchange="printColor(event)" style="margin-bottom: 10px; padding: 2px 5px 2px 5px;">
                             </div>
-                            <div class="mb-3">
-                                <label for="sinkFaucet" class="form-label">Sink Faucet</label>
-                                <input type="color" class="form-control form-control-color w-25" id="sinkFaucet"
-                                    value="#563d7c" title="Choose your color">
+                            <button class="collapsible">Sink Faucet</button>
+                            <div class="content">
+                                <input type="color" class="form-control form-control-color w-25 " id="sinkFaucet"
+                                    value="#563d7c" title="Choose your color" onchange="printColor(event)" style="margin-bottom: 10px; padding: 2px 5px 2px 5px;">
                             </div>
-                            <div class="mb-3">
-                                <label for="walls" class="form-label">Walls</label>
-                                <input type="color" class="form-control form-control-color w-25" id="walls"
-                                    value="#563d7c" title="Choose your color">
+                            <button class="collapsible">Walls</button>
+                            <div class="content">
+                                <input type="color" class="form-control form-control-color w-25 " id="walls"
+                                    value="#563d7c"  title="Choose your color" onchange="printColor(event)" style="margin-bottom: 10px; padding: 2px 5px 2px 5px;">
                             </div>
-                            <div class="mb-3">
-                                <label for="backsplash" class="form-label">Backsplash File</label>
-                                <input class="form-control form-control-sm" id="backsplash" type="file">
+                            <button class="collapsible">Backsplash</button>
+                            <div class="content">
+                                <input class="form-control form-control-sm " onchange="printColor(event)" id="backsplash_input" type="file" style="margin-bottom: 10px;" multiple>
                             </div>
-                        </form>
+                        </div>
                     </div>
 
                     <div class="content-column col-lg-10 col-md-12 col-sm-12 main-design">
@@ -397,10 +397,9 @@
 
     </div>
 
-
-
     <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div>
+    <script src="{% static 'render page/main.js' %}"></script>
     <script src="{% static 'home_resource/js/jquery.js' %}"></script>
     <script src="{% static 'home_resource/js/popper.min.js' %}"></script>
     <script src="{% static 'home_resource/js/bootstrap.min.js' %}"></script>
