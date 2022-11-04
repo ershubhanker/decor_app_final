@@ -8,12 +8,12 @@ var base_cabinet3 = "";
 var base_cabinet4 = "";
 
 var Backsplash_01 = "";
-var floor ="";
-var wall ="";
+var floor = "";
+var wall = "";
 
-var sink0="";
-var sink1="";
-var sink2="";
+var sink0 = "";
+var sink1 = "";
+var sink2 = "";
 
 var wallCabinet = "";
 
@@ -21,19 +21,19 @@ var wallCabinet = "";
 const scene = new BABYLON.Scene(engine);
 
 // /**** Set camera and light *****/
-const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI/2.5 , Math.PI/2.5 , 15, new BABYLON.Vector3(0, 1, 0));
+const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2.5, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 1, 0));
 camera.attachControl(canvas, true);
 camera.lowerRadiusLimit = 3;
 camera.upperRadiusLimit = 3;
-camera.upperBetaLimit = Math.PI/2;
+camera.upperBetaLimit = Math.PI / 2;
 
 // const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0),scene);
 
-const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0.5, 0.6, 0.2),scene);
+const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0.5, 0.6, 0.2), scene);
 
 // const light1 = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0.1, 1, 0),scene);
 
-const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:10, height:10},scene);
+const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 10, height: 10 }, scene);
 
 var page_url = window.location.href
 var model_name = page_url.split("/")[6];
@@ -43,15 +43,15 @@ var model_name = page_url.split("/")[6];
 //     console.log("The function has been called!");
 // }
 
-const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_name,scene).then((result) => {
-    
-    
+const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_name, scene).then((result) => {
+
+
     // It gives value of all the present components in a model
     // for (let i = 0; i < result.meshes.length; i++){
     //     console.log(result.meshes[i].id)
     // }
-    
-    wall = scene.getMeshByName("Wall_01");
+
+    wall = scene.getMeshByName("Walls_primitive0");
 
     floor = scene.getMeshByName("Floor_Wood_01");
 
@@ -65,60 +65,60 @@ const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_
     base_cabinet3 = scene.getMeshByName("Base cabinet_03");
     base_cabinet4 = scene.getMeshByName("Base cabinet_04");
 
-    Backsplash_01 = scene.getMeshByName("Backsplash_01"); 
+    Backsplash_01 = scene.getMeshByName("Backsplash_01");
 
     sink0 = scene.getMeshByName("Sink_01_primitive0");
     sink1 = scene.getMeshByName("Sink_01_primitive1");
     sink2 = scene.getMeshByName("Sink_01_primitive2");
-   
+
 });
 // Add your code here matching the playground format
-const createScene = async  function () {
+const createScene = async function () {
 
 
-        // const tvMat = new BABYLON.StandardMaterial("tvMat");
-        // tvMat.diffuseTexture = new BABYLON.Texture(val)
-        // tv.material = tvMat;
+    // const tvMat = new BABYLON.StandardMaterial("tvMat");
+    // tvMat.diffuseTexture = new BABYLON.Texture(val)
+    // tv.material = tvMat;
 
-        
-        engine.runRenderLoop(function () {
-            scene.render();
-        });
-        
-        // Watch for browser/canvas resize events
-        window.addEventListener("resize", function () {
+
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+
+    // Watch for browser/canvas resize events
+    window.addEventListener("resize", function () {
         engine.resize();
-        });
+    });
 
 
-return scene;
+    return scene;
 
 };
 
 createScene();
 
 
-function changeWall(_src){
+function changeWall(_src) {
     console.log(_src)
     const wallMat = new BABYLON.StandardMaterial("Wall_01");
-    wallMat.diffuseTexture = new BABYLON.Texture(_src,scene)
+    wallMat.diffuseTexture = new BABYLON.Texture(_src, scene)
 
     wall.material = wallMat; //new BABYLON.Color3(0,0,1);
-    
+
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
 }
 
 //Change Floor Pattern
-function changeFloor(_src){
+function changeFloor(_src) {
     console.log(_src)
     const floorMat = new BABYLON.StandardMaterial("Floor_Wood_01");
     floorMat.diffuseTexture = new BABYLON.Texture(_src)
@@ -128,17 +128,17 @@ function changeFloor(_src){
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
 }
 
 //Backsplash
-function changeBackSplash(_src){
+function changeBackSplash(_src) {
     console.log(_src)
     const backSplash = new BABYLON.StandardMaterial("Backsplash_01");
     backSplash.diffuseTexture = new BABYLON.Texture(_src)
@@ -148,17 +148,17 @@ function changeBackSplash(_src){
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
 }
 
 //CounterTop
-function changeCountertop(_src){
+function changeCountertop(_src) {
     console.log(_src)
     const counterTopMat = new BABYLON.StandardMaterial("Countertop_01");
     counterTopMat.diffuseTexture = new BABYLON.Texture(_src)
@@ -169,17 +169,17 @@ function changeCountertop(_src){
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
 }
 
 //base_cabinet2
-function changebaseCabinet2(_src){
+function changebaseCabinet2(_src) {
     console.log(_src)
     const counterTopMat = new BABYLON.StandardMaterial("Countertop_01");
     counterTopMat.diffuseTexture = new BABYLON.Texture(_src)
@@ -193,10 +193,10 @@ function changebaseCabinet2(_src){
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
@@ -204,7 +204,7 @@ function changebaseCabinet2(_src){
 
 
 //Wall Cabinet
-function changeWallCabinet(_src){
+function changeWallCabinet(_src) {
     console.log(_src)
     const wallcabinet = new BABYLON.StandardMaterial("Wall Cabinet_01");
     wallcabinet.diffuseTexture = new BABYLON.Texture(_src)
@@ -214,17 +214,17 @@ function changeWallCabinet(_src){
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
 }
 
 //Sink
-function changeSink(_src){
+function changeSink(_src) {
     console.log(_src)
     const sink = new BABYLON.StandardMaterial("Wall Cabinet_01");
     sink.diffuseTexture = new BABYLON.Texture(_src)
@@ -236,10 +236,10 @@ function changeSink(_src){
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
@@ -248,29 +248,32 @@ function changeSink(_src){
 
 function printColor(ev) {
     const color = ev.target.value
-    var r = parseInt(color.substr(1,2), 16)
-    var g = parseInt(color.substr(3,2), 16)
 
-    var b = parseInt(color.substr(5,2), 16)
-    r = r/100;
-    g = g/100;
-    b = b/100;
+    var r = parseInt(color.substr(1, 2), 16)
+    var g = parseInt(color.substr(3, 2), 16)
+    var b = parseInt(color.substr(5, 2), 16)
+
+    r = r / 100;
+    g = g / 100;
+    b = b / 100;
+
     const groundMat = new BABYLON.StandardMaterial("Wall_01");
-    groundMat.diffuseColor = new BABYLON.Color3(r,g,b);
-    // groundMat.diffuseColor = new BABYLON.Color3.Red();
-
-    wall.material =  groundMat
 
     console.log(`red: ${r}, green: ${g}, blue: ${b}`)
+
+    groundMat.diffuseColor = new BABYLON.Color3(r, g, b);
+    // groundMat.diffuseColor = new BABYLON.Color3.Red();
+
+    wall.material = groundMat
 
     engine.runRenderLoop(function () {
         scene.render();
     });
-    
+
     // Watch for browser/canvas resize events
     window.addEventListener("resize", function () {
-    engine.resize();
+        engine.resize();
     });
     return scene;
 
-  } // end of printColor
+} // end of printColor
