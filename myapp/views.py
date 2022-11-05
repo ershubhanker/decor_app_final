@@ -13,6 +13,9 @@ from django.core import serializers
 
 
 def Userlogin(request):
+	redirect_to = request.GET.get('next')
+	if redirect_to == None:
+		redirect_to = "/myapp/home"
 	if request.method == 'POST':
 		loginForm = UserLoginForm(request.POST or None)
 		if loginForm.is_valid():
@@ -21,7 +24,7 @@ def Userlogin(request):
 			user = authenticate(username=username, password=password)
 			if user.is_active:
 				login(request, user)
-				return redirect('/myapp/home')
+				return redirect(redirect_to)
 	else:
 		loginForm = UserLoginForm()
 	return render(request, 'login.html', {'loginForm': loginForm})
@@ -70,10 +73,11 @@ def Aboutpage(request):
 def Servicepage(request):
 	return render(request, 'services.html')
 
-
+@login_required
 def Projectpage(request):
 	room_cat = list(RoomCategory.objects.values())
 	room = list(Room.objects.values())
+    
 	return render(request,'projects.html',{"room_cat":room_cat,"room":room})
 
 def Contactpage(request):

@@ -73,130 +73,44 @@
                                         <li><a href="#">Blog</a></li>
                                         <li><a href="#">Shop</a></li>
                                         <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
-                                        <li><a href="{% url 'myapp:login' %}">Login</a></li>
-                                        <!-- <li class="dropdown"><a href="#">Home</a>
-                                        <ul>
-                                            <li class="dropdown"><a href="#">Header Styles</a>
-                                                <ul>
-                                                    <li><a href="{% url 'myapp:home' %}">Header Style One</a></li>
-                                                    <li><a href="index-3.html">Header Style Two</a></li>
-                                                    <li><a href="index-4.html">Header Style Three</a></li>
-                                                    <li><a href="index-5.html">Header Style Four</a></li>
-                                                    <li><a href="index-6.html">Header Style Five</a></li>
-                                                    <li><a href="index-7.html">Header Style Six</a></li>
-                                                    <li><a href="{% url 'myapp:about' %}">Header Style Seven</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="{% url 'myapp:home' %}">Home page 01</a></li>
-                                            <li><a href="index-3.html">Home page 02</a></li>
-                                            <li><a href="index-4.html">Home page 03</a></li>
-                                            <li><a href="index-5.html">Home page 04</a></li>
-                                            <li><a href="index-6.html">Home page 05</a></li>
-                                            <li><a href="index-7.html">Home page 06</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">About</a>
-                                        <ul>
-                                            <li><a href="{% url 'myapp:about' %}">About Us</a></li>
-                                            <li><a href="faq.html">FAQ's</a></li>
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="coming-soon.html">Coming Soon</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="{% url 'myapp:service' %}">All Services</a></li>
-                                            <li><a href="service-detail.html">Commercial Design</a></li>
-                                            <li><a href="service-detail.html">Landescape Design</a></li>
-                                            <li><a href="service-detail.html">Interior Design</a></li>
-                                            <li><a href="service-detail.html">Complete Interior</a></li>
-                                            <li><a href="service-detail.html">House Interior</a></li>
-                                            <li><a href="service-detail.html">Service Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="current dropdown"><a href="#">Projects</a>
-                                        <ul>
-                                            <li><a href="{% url 'myapp:project' %}">Projects</a></li>
-                                            <li><a href="{% url 'myapp:project' %}">Project Detail</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="#">Blog Classic</a></li>
-                                            <li><a href="#">Blog Detail 01</a></li>
-                                            <li><a href="blog-detail-2.html">Blog Detail 02</a></li>
-                                            <li><a href="error-page.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Shop</a>
-                                        <ul>
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="shop-single.html">Product Details</a></li>
-                                            <li><a href="shoping-cart.html">Cart Page</a></li>
-                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                            <li><a href="login.html">Registration Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
-                                    <li class="dropdown has-mega-menu"><a href="#">Pages</a>
-                                        <div class="mega-menu">
-                                            <div class="mega-menu-bar row clearfix">
-                                                <div class="column col-lg-3 col-md-3 col-sm-12">
-                                                    <h3>About</h3>
-                                                    <ul>
-                                                        <li><a href="{% url 'myapp:about' %}">About Us</a></li>
-                                                        <li><a href="faq.html">FAQ's</a></li>
-                                                        <li><a href="team.html">Our Team</a></li>
-                                                        <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                        <li><a href="login.html">Login</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="column col-lg-3 col-md-3 col-sm-12">
-                                                    <h3>Services</h3>
-                                                    <ul>
-                                                        <li><a href="{% url 'myapp:service' %}">All Services</a></li>
-                                                        <li><a href="service-detail.html">Commercial Design</a></li>
-                                                        <li><a href="service-detail.html">Landescape Design</a></li>
-                                                        <li><a href="service-detail.html">Complete Interior</a></li>
-                                                        <li><a href="service-detail.html">Service Detail</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="column col-lg-3 col-md-3 col-sm-12">
-                                                    <h3>Projects</h3>
-                                                    <ul>
-                                                        <li><a href="{% url 'myapp:project' %}">Projects</a></li>
-                                                        <li><a href="{% url 'myapp:project' %}">Commercial Projects</a></li>
-                                                        <li><a href="{% url 'myapp:project' %}">Landescape Projects</a></li>
-                                                        <li><a href="{% url 'myapp:project' %}">Project Detail</a></li>
-                                                        <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="column col-lg-3 col-md-3 col-sm-12">
-                                                    <h3>Blog</h3>
-                                                    <ul>
-                                                        <li><a href="blog.html">Blog Grid</a></li>
-                                                        <li><a href="#">Blog Classic</a></li>
-                                                        <li><a href="#">Blog Detail 01</a></li>
-                                                        <li><a href="blog-detail-2.html">Blog Detail 01</a></li>
-                                                        <li><a href="error-page.html">Error Page</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li> -->
+                                        <!-- <li><a href="{% url 'myapp:login' %}">Login</a></li> -->
+                                        <!-- <li><a href="{% url 'myapp:login' %}?next={{request.path}}">Login</a></li> -->
+                                        <li class="dropdown">
+                                            <a href="#">
+                                                <button class="search-box-btn dropdown-toggle" type="button"
+                                                    id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}"
+                                                        style="border-radius: 50%; border: 2px solid black;">
+                                                </button>
+                                                {{request.user.username}}
+                                            </a>
+                                            <ul>
+                                                <li><a href="{% url 'myapp:profile' %}">Profile</a></li>
+                                                <li><a href="{% url 'myapp:logout' %}">Logout</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </div>
+
                             </nav><!-- Main Menu End-->
 
                             <!-- Outer Box-->
-                            <div class="outer-box">
-                                <!--Search Box-->
+                            <!-- <div class="outer-box">
                                 <div class="search-box-outer">
                                     <div class="dropdown">
                                         <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
-                                                class="fa fa-search"></span></button>
+                                                class="fa fa-sarch"></span></button>
+                                        <ul class="dropdown-menu pull-right "
+                                            aria-labelledby="dropdownMenu3">
+                                            <li class="dropdown"><a href="#">Projects</a>
+                                                <ul>
+                                                    <li><a href="projects.html">Projects</a></li>
+                                                    <li><a href="project-detail.html">Project Detail</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
                                         <ul class="dropdown-menu pull-right search-panel"
                                             aria-labelledby="dropdownMenu3">
                                             <li class="panel-outer">
@@ -214,7 +128,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -252,10 +166,6 @@
                             <li class="filter" data-role="button" data-filter=.{{value.RoomCategory}}>
                                 {{value.RoomCategory}}</li>
                             {% endfor %}
-                            <!-- <li class="filter" data-role="button" data-filter=".commercial">COMMERCIAL</li>
-                        <li class="filter" data-role="button" data-filter=".landescape">LANDESCAPE</li>
-                        <li class="filter" data-role="button" data-filter=".interior">INTERIOR</li>
-                        <li class="filter" data-role="button" data-filter=".architecture">ARCHITECTURE</li> -->
                         </ul>
                     </div>
 
@@ -277,7 +187,8 @@
                                         <!-- <a href="{% static 'home_resource/images/gallery/2-1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
                                         <!-- <a href="/upload/{{room_value.room_img}}" class="lightbox-image"
                                             data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
-                                        <a href="{% url 'myapp:render'%}?path={{room_value.upload}}" ><i class="fa fa-external-link"></i></a>
+                                        <a href="{% url 'myapp:render'%}?path={{room_value.upload}}"><i
+                                                class="fa fa-external-link"></i></a>
                                     </div>
                                     <!-- <span class="tag">{{room_value.RoomCategory}}</span> -->
                                     <!-- <span class="tag">{{room_category_name}}</span> -->
@@ -286,97 +197,6 @@
                         </div>
                         {% endfor %}
                     </div>
-
-                    <!-- Project Block -->
-                    <!-- <div class="project-block all mix landescape architecture col-lg-8 col-md-6 col-sm-12">
-                        <div class="image-box">
-                            <figure class="image"><img src="{% static 'home_resource/images/gallery/2-2.jpg' %}" alt=""></figure>
-                            <div class="overlay-box">
-                                <h4><a href="{% url 'myapp:project' %}">Laxury Home <br>Project</a></h4>
-                                <div class="btn-box">
-                                    <a href="{% static 'home_resource/images/gallery/2-2.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="{% url 'myapp:project' %}"><i class="fa fa-external-link"></i></a>
-                                </div>
-                                <span class="tag">Architecture</span>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Project Block -->
-                    <!-- <div class="project-block all mix landescape interior col-lg-6 col-md-6 col-sm-12">
-                        <div class="image-box">
-                            <figure class="image"><img src="{% static 'home_resource/images/gallery/2-3.jpg' %}" alt=""></figure>
-                            <div class="overlay-box">
-                                <h4><a href="{% url 'myapp:project' %}">Laxury Home <br>Project</a></h4>
-                                <div class="btn-box">
-                                    <a href="{% static 'home_resource/images/gallery/2-3.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="{% url 'myapp:project' %}"><i class="fa fa-external-link"></i></a>
-                                </div>
-                                <span class="tag">Architecture</span>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Project Block -->
-                    <!-- <div class="project-block all mix landescape commercial architecture col-lg-6 col-md-6 col-sm-12">
-                        <div class="image-box">
-                            <figure class="image"><img src="{% static 'home_resource/images/gallery/2-4.jpg' %}" alt=""></figure>
-                            <div class="overlay-box">
-                                <h4><a href="{% url 'myapp:project' %}">Laxury Home <br>Project</a></h4>
-                                <div class="btn-box">
-                                    <a href="{% static 'home_resource/images/gallery/2-4.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="{% url 'myapp:project' %}"><i class="fa fa-external-link"></i></a>
-                                </div>
-                                <span class="tag">Architecture</span>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Project Block -->
-                    <!-- <div class="project-block all mix landescape interior col-lg-4 col-md-6 col-sm-12">
-                        <div class="image-box">
-                            <figure class="image"><img src="{% static 'home_resource/images/gallery/2-5.jpg' %}" alt=""></figure>
-                            <div class="overlay-box">
-                                <h4><a href="{% url 'myapp:project' %}">Laxury Home <br>Project</a></h4>
-                                <div class="btn-box">
-                                    <a href="{% static 'home_resource/images/gallery/2-5.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="{% url 'myapp:project' %}"><i class="fa fa-external-link"></i></a>
-                                </div>
-                                <span class="tag">Architecture</span>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Project Block -->
-                    <!-- <div class="project-block all mix landescape commercial interior col-lg-4 col-md-6 col-sm-12">
-                        <div class="image-box">
-                            <figure class="image"><img src="{% static 'home_resource/images/gallery/2-6.jpg' %}" alt=""></figure>
-                            <div class="overlay-box">
-                                <h4><a href="{% url 'myapp:project' %}">Laxury Home <br>Project</a></h4>
-                                <div class="btn-box">
-                                    <a href="{% static 'home_resource/images/gallery/2-6.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="{% url 'myapp:project' %}"><i class="fa fa-external-link"></i></a>
-                                </div>
-                                <span class="tag">Architecture</span>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Project Block -->
-                    <!-- <div class="project-block all mix landescape interior col-lg-4 col-md-6 col-sm-12">
-                        <div class="image-box">
-                            <figure class="image"><img src="{% static 'home_resource/images/gallery/2-7.jpg' %}" alt=""></figure>
-                            <div class="overlay-box">
-                                <h4><a href="{% url 'myapp:project' %}">Laxury Home <br>Project</a></h4>
-                                <div class="btn-box">
-                                    <a href="{% static 'home_resource/images/gallery/2-7.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a>
-                                    <a href="{% url 'myapp:project' %}"><i class="fa fa-external-link"></i></a>
-                                </div>
-                                <span class="tag">Architecture</span>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
 
