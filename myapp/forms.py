@@ -2,16 +2,17 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from .models import *
 
 
 class SignupUser(UserCreationForm):
-	first_name = forms.CharField(max_length=100,required = True)
-	last_name =  forms.CharField(max_length=100,required = True)
-	email = forms.EmailField(max_length=250)
+    first_name = forms.CharField(max_length=100, required=True)
+    last_name = forms.CharField(max_length=100, required=True)
+    email = forms.EmailField(max_length=250)
+    class Meta:
+        model = User
+        fields = ('username', 'first_name', 'last_name', 'password1', 'password2',)
 
-	class Meta:
-		model = User
-		fields = ('username','first_name','last_name','password1','password2',)
 
 class UserLoginForm(forms.Form):
     username = forms.CharField()
@@ -31,3 +32,32 @@ class UserLoginForm(forms.Form):
                 raise forms.ValidationError('This user is not active')
         return super(UserLoginForm, self).clean(*args, **kwargs)
 
+class FloorUploadForm(forms.ModelForm):
+    class Meta:
+        model = Floor
+        fields = ['texture_Floor',]
+
+class BackSplashForm(forms.ModelForm):
+    class Meta:
+        model = Backsplash
+        fields = ['back_splash',]
+        
+class CabinetForm(forms.ModelForm):
+    class Meta:
+        model = Cabinet
+        fields = ['cabinet']
+        
+class CabinetHandleForm(forms.ModelForm):
+    class Meta:
+        model = CabinetHandle
+        fields = ['cabinethandle']
+
+class SinkFaucetForm(forms.ModelForm):
+    class Meta:
+        model = SinkFaucet
+        fields = ['sinkfaucet']
+        
+class WallsForm(forms.ModelForm):
+    class Meta:
+        model = Walls
+        fields = ['walls']
