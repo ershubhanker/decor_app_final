@@ -47,9 +47,9 @@ const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_
 
 
     // It gives value of all the present components in a model
-    // for (let i = 0; i < result.meshes.length; i++){
-    //     console.log(result.meshes[i].id)
-    // }
+    for (let i = 0; i < result.meshes.length; i++){
+        console.log(result.meshes[i].id)
+    }
 
     wall = scene.getMeshByName("Walls_primitive0");
 
@@ -60,10 +60,10 @@ const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_
     countertop1 = scene.getMeshByName("Countertop_01");
     countertop2 = scene.getMeshByName("Countertop_02");
 
-    base_cabinet1 = scene.getMeshByName("Base cabinet_01");
-    base_cabinet2 = scene.getMeshByName("Base cabinet_02");
-    base_cabinet3 = scene.getMeshByName("Base cabinet_03");
-    base_cabinet4 = scene.getMeshByName("Base cabinet_04");
+    base_cabinet1 = scene.getMeshByName("BasCabinet_primitive0");
+    base_cabinet2 = scene.getMeshByName("BasCabinet_primitive1");
+    // base_cabinet3 = scene.getMeshByName("Base cabinet_03");
+    // base_cabinet4 = scene.getMeshByName("Base cabinet_04");
 
     Backsplash_01 = scene.getMeshByName("Backsplash_01");
 

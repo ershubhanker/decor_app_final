@@ -40,6 +40,7 @@ class RoomType(models.Model):
 class Floor(models.Model):
     texture_Floor = models.ImageField(blank=True,upload_to ='img/floor')
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    roomuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return "%s" % (self.roomtype)
@@ -47,6 +48,7 @@ class Floor(models.Model):
 class Backsplash(models.Model):
     back_splash = models.ImageField(blank=True,upload_to ='img/backsplash')
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    backsplashuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return "%s" % (self.roomtype)
@@ -54,6 +56,7 @@ class Backsplash(models.Model):
 class Cabinet(models.Model):
     cabinet = models.CharField(blank=True, max_length=10)
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    cabinetuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return "%s" % (self.roomtype)
@@ -61,6 +64,7 @@ class Cabinet(models.Model):
 class CabinetHandle(models.Model):
     cabinethandle = models.CharField(blank=True, max_length=10)
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    cabinethandleuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return "%s" % (self.roomtype)
@@ -68,6 +72,7 @@ class CabinetHandle(models.Model):
 class SinkFaucet(models.Model):
     sinkfaucet = models.CharField(blank=True, max_length=10)
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    sinkfaucetuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return "%s" % (self.roomtype)
@@ -75,6 +80,7 @@ class SinkFaucet(models.Model):
 class Walls(models.Model):
     walls = models.CharField(blank=True, max_length=10)
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    walluser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return "%s" % (self.roomtype)

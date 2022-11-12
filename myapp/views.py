@@ -119,6 +119,8 @@ def Faqpage(request):
 
 @login_required
 def rendermodel(request):
+    print(request.user)
+    
     if request.method == 'POST':
         room_type = RoomType(first_name="Kitchen")
         room_type.save()
@@ -128,9 +130,9 @@ def rendermodel(request):
             if floor_form.is_valid():
                 # img_object = floor_form.cleaned_data['texture_Floor']
                 for img_object in request.FILES.getlist('texture_Floor'):
-                    val = Floor(texture_Floor=img_object, roomtype=room_type)
+                    val = Floor(texture_Floor=img_object, roomtype=room_type, roomuser=request.user)
                     val.save()
-                # return HttpResponseRedirect('/render.html')
+                return HttpResponseRedirect('/myapp/render')
 
         elif 'back_splash' in request.POST:
             backsplash = BackSplashForm(request.POST, request.FILES)
@@ -142,35 +144,35 @@ def rendermodel(request):
 
                 for img_object in request.FILES.getlist('back_splash'):
                     val = Backsplash(back_splash=img_object,
-                                     roomtype=room_type)
+                                     roomtype=room_type, backsplashuser=request.user)
                     val.save()
 
         elif 'cabinet' in request.POST:
             cab = CabinetForm(request.POST, request.FILES)
             if cab.is_valid():
                 img_object = cab.data['cabinet']
-                val = Cabinet(cabinet=img_object, roomtype=room_type)
+                val = Cabinet(cabinet=img_object, roomtype=room_type, cabinetuser=request.user)
                 val.save()
         
         elif 'cabinethandle' in request.POST:
             cabhandle = CabinetHandleForm(request.POST, request.FILES)
             if cabhandle.is_valid():
                 img_object = cabhandle.data['cabinethandle']
-                val = CabinetHandle(cabinethandle=img_object, roomtype=room_type)
+                val = CabinetHandle(cabinethandle=img_object, roomtype=room_type, cabinethandleuser=request.user)
                 val.save()
         
         elif 'sinkfaucet' in request.POST:
             sinkfau = SinkFaucetForm(request.POST, request.FILES)
             if sinkfau.is_valid():
                 img_object = sinkfau.data['sinkfaucet']
-                val = SinkFaucet(sinkfaucet=img_object, roomtype=room_type)
+                val = SinkFaucet(sinkfaucet=img_object, roomtype=room_type, sinkfaucetuser=request.user)
                 val.save()
         
         elif 'walls' in request.POST:
             walls = WallsForm(request.POST, request.FILES)
             if walls.is_valid():
                 img_object = walls.data['walls']
-                val = Walls(walls=img_object, roomtype=room_type)
+                val = Walls(walls=img_object, roomtype=room_type, walluser=request.user)
                 val.save()
     else:
         floor_form = FloorUploadForm()
@@ -180,12 +182,12 @@ def rendermodel(request):
         sinkfaucet_form = SinkFaucetForm()
         walls_form = SinkFaucetForm()
   
-        floor_show = Floor.objects.all().order_by("-id")
-        bcsplash_show = Backsplash.objects.all().order_by("-id")
-        cabinet_show = Cabinet.objects.all().order_by("-id")
-        cabinethandle_show = CabinetHandle.objects.all().order_by("-id")
-        sinkfaucet_show = SinkFaucet.objects.all().order_by("-id")
-        walls_show = Walls.objects.all().order_by("-id")
+        floor_show = Floor.objects.filter(roomuser=request.user).order_by("-id")
+        bcsplash_show = Backsplash.objects.filter(backsplashuser=request.user).order_by("-id")
+        cabinet_show = Cabinet.objects.filter(cabinetuser=request.user).order_by("-id")
+        cabinethandle_show = CabinetHandle.objects.filter(cabinethandleuser=request.user).order_by("-id")
+        sinkfaucet_show = SinkFaucet.objects.filter(sinkfaucetuser=request.user).order_by("-id")
+        walls_show = Walls.objects.filter(walluser=request.user).order_by("-id")
 
         return render(request, 'render.html', {"floor_textures": floor_show, 
                                                "bcsplash": bcsplash_show, 
