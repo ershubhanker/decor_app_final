@@ -226,19 +226,19 @@
                                         novalidate="">
                                         {% csrf_token %}
                                         <!-- {{ floor_form.texture_wall }} -->
-                                        <input class="form-control form-control-sm" onchange="printColor(event)"
-                                            id="floor_input" name="texture_Floor" type="file" multiple>
+                                        <input class="form-control form-control-sm" id="floor_input"
+                                            name="texture_Floor" type="file" multiple>
                                         <input type="submit" name="floor" />
                                     </form>
                                 </div>
                                 <div class="horizontal-scroll hstack gap-2">
                                     {% for floor_img in floor_textures %}
                                     <img onclick="changeFloor(this.src)" src="{{floor_img.texture_Floor.url}}"
-                                        alt="no img" style="aspect-ratio: 1 / 1;">
+                                        alt="no img" style="aspect-ratio: 1 / 1;" onclick="changeWall(event)">
                                     {% endfor %}
                                 </div>
                             </li>
-                            <!-- --------------------------------------Cabinet/WallCabinet------------------------------------------ -->
+                            <!-- --------------------------------------Cabinet/changebaseCabinet2------------------------------------------ -->
                             <button class="collapsible">Cabinet</button>
                             <li class="list-group-item-primary content">
                                 <div style="border: 1px; margin-top: 10px;">
@@ -247,17 +247,17 @@
                                         {% csrf_token %}
                                         <!-- {{ cabinet_form.texture_wall }} -->
                                         <input type="color" class="form-control form-control-color w-25 " id="cabinet"
-                                            value="#563d7c" title="Choose your color" onchange="printColor(event)"
-                                            style="margin-bottom: 10px;" name="cabinet">
+                                            value="#563d7c" title="Choose your color" style="margin-bottom: 10px;"
+                                            name="cabinet">
                                         <input type="submit" />
                                     </form>
                                 </div>
                                 <!-- <li class="list-group-item list-group-item-primary"> -->
                                 <div class="horizontal-scroll hstack gap-2">
                                     {% for cabinet_img in cabinet_textures %}
-                                    <input type="button" class="btn"
+                                    <input type="button" class="btn" mycolor="{{cabinet_img.cabinet}}"
                                         style="background-color: {{cabinet_img.cabinet}}; border: 5px solid white"
-                                        alt="no img">
+                                        alt="no img" onclick="changebaseCabinet2(event)">
                                     {% endfor %}
                                 </div>
                                 <!-- </li> -->
@@ -272,8 +272,7 @@
                                         <!-- {{ cabinetHandle_form.texture_wall }} -->
                                         <input type="color" class="form-control form-control-color w-25 "
                                             id="cabinetHandleID" value="#563d7c" title="Choose your color"
-                                            onchange="printColor(event)" name="cabinethandle"
-                                            style="margin-bottom: 10px;">
+                                            name="cabinethandle" style="margin-bottom: 10px;">
                                         <input type="submit" />
                                     </form>
                                 </div>
@@ -283,7 +282,8 @@
                                     {% for cabinetHandle_img in cabinetHandle_textures %}
                                     <input type="button" class="btn"
                                         style="background-color: {{cabinetHandle_img.cabinethandle}}; border: 5px solid white"
-                                        alt="no img">
+                                        alt="no img" onclick="changecabinethandle(event)"
+                                        mycolor="{{cabinetHandle_img.cabinethandle}}">
                                     {% endfor %}
                                 </div>
                                 <!-- </li> -->
@@ -298,7 +298,7 @@
                                         <!-- {{ sinkFaucet_form.texture_wall }} -->
                                         <input type="color" class="form-control form-control-color w-25 "
                                             id="sinkFaucetID" value="#563d7c" title="Choose your color"
-                                            onchange="printColor(event)" name="sinkfaucet" style="margin-bottom: 10px;">
+                                            name="sinkfaucet" style="margin-bottom: 10px;">
                                         <input type="submit" />
                                     </form>
                                 </div>
@@ -308,7 +308,8 @@
                                     {% for sinkFaucet_img in sinkFaucet_textures %}
                                     <input type="button" class="btn"
                                         style="background-color: {{sinkFaucet_img.sinkfaucet}}; border: 5px solid white"
-                                        alt="no img">
+                                        alt="no img" onclick="changeSink(event)"
+                                        mycolor="{{sinkFaucet_img.sinkfaucet}}">
                                     {% endfor %}
                                 </div>
                             </li>
@@ -321,8 +322,8 @@
                                         {% csrf_token %}
                                         <!-- {{ walls_form.texture_wall }} -->
                                         <input type="color" class="form-control form-control-color w-25 " id="wallsID"
-                                            value="#563d7c" title="Choose your color" onchange="printColor(event)"
-                                            name="walls" style="margin-bottom: 10px;">
+                                            value="#563d7c" title="Choose your color" name="walls"
+                                            style="margin-bottom: 10px;">
                                         <input type="submit" />
                                     </form>
                                 </div>
@@ -332,7 +333,7 @@
                                     {% for walls_img in walls_textures %}
                                     <input type="button" class="btn"
                                         style="background-color: {{walls_img.walls}}; border: 5px solid white"
-                                        alt="no img">
+                                        alt="no img" onclick="changeWall(event)" mycolor="{{walls_img.walls}}">
                                     {% endfor %}
                                 </div>
                             </li>
@@ -354,7 +355,7 @@
                                 <div class="horizontal-scroll hstack gap-2">
                                     {% for backsplash_img in bcsplash %}
                                     <img onclick="changeBackSplash(this.src)" src="{{backsplash_img.back_splash.url}}"
-                                        alt="no img">
+                                        alt="no img" style="aspect-ratio: 1 / 1;" onclick="changeBackSplash(event)">
                                     {% endfor %}
                                 </div>
                                 <!-- </li> -->

@@ -118,9 +118,7 @@ def Faqpage(request):
 # 	return render(request,'render.html')
 
 @login_required
-def rendermodel(request):
-    print(request.user)
-    
+def rendermodel(request):    
     if request.method == 'POST':
         room_type = RoomType(first_name="Kitchen")
         room_type.save()

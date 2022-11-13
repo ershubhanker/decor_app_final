@@ -17,6 +17,7 @@ var sink2 = "";
 
 var wallCabinet = "";
 
+var cabinethandle = "";
 
 const scene = new BABYLON.Scene(engine);
 
@@ -51,25 +52,39 @@ const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_
         console.log(result.meshes[i].id)
     }
 
-    wall = scene.getMeshByName("Walls_primitive0");
+    // wall = scene.getMeshByName("Walls_primitive0");
 
-    floor = scene.getMeshByName("Floor_Wood_01");
+    wall0 = scene.getMeshByName("Walls_primitive0");
+    wall1 = scene.getMeshByName("Walls_primitive1");
+
+    // floor = scene.getMeshByName("Floor_Wood_01");
+
+    floor0 = scene.getMeshByName('Floor 12"*24"');
+    floor1 = scene.getMeshByName('Floor 24"*24"');
 
     wallCabinet = scene.getMeshByName("Wall Cabinet_01");
 
     countertop1 = scene.getMeshByName("Countertop_01");
     countertop2 = scene.getMeshByName("Countertop_02");
 
-    base_cabinet1 = scene.getMeshByName("BasCabinet_primitive0");
-    base_cabinet2 = scene.getMeshByName("BasCabinet_primitive1");
+    base_cabinet0 = scene.getMeshByName("BasCabinet_primitive0");
+    base_cabinet1 = scene.getMeshByName("BasCabinet_primitive1");
     // base_cabinet3 = scene.getMeshByName("Base cabinet_03");
     // base_cabinet4 = scene.getMeshByName("Base cabinet_04");
 
-    Backsplash_01 = scene.getMeshByName("Backsplash_01");
+    // Backsplash_01 = scene.getMeshByName("Backsplash_01");
 
-    sink0 = scene.getMeshByName("Sink_01_primitive0");
-    sink1 = scene.getMeshByName("Sink_01_primitive1");
-    sink2 = scene.getMeshByName("Sink_01_primitive2");
+    Backsplash = scene.getMeshByName("BackSplash");
+
+    // sink0 = scene.getMeshByName("Sink_01_primitive0");
+    // sink1 = scene.getMeshByName("Sink_01_primitive1");
+    // sink2 = scene.getMeshByName("Sink_01_primitive2");
+
+    sink0 = scene.getMeshByName("Faucet");
+    sink1 = scene.getMeshByName("WashBasin_primitive0");
+    sink2 = scene.getMeshByName("WashBasin_primitive1");
+
+    cabinethandle = scene.getMeshByName("Handles");
 
 });
 // Add your code here matching the playground format
@@ -99,11 +114,26 @@ createScene();
 
 
 function changeWall(_src) {
-    console.log(_src)
-    const wallMat = new BABYLON.StandardMaterial("Wall_01");
-    wallMat.diffuseTexture = new BABYLON.Texture(_src, scene)
+    const color = _src.target.attributes.mycolor.value
 
-    wall.material = wallMat; //new BABYLON.Color3(0,0,1);
+    var r = parseInt(color.substr(1, 2), 16)
+    var g = parseInt(color.substr(3, 2), 16)
+    var b = parseInt(color.substr(5, 2), 16)
+
+    r = r / 100;
+    g = g / 100;
+    b = b / 100;
+
+    const wallMat0 = new BABYLON.StandardMaterial("Walls_primitive0");
+    const wallMat1 = new BABYLON.StandardMaterial("Walls_primitive1");
+
+    console.log(`red: ${r}, green: ${g}, blue: ${b}`)
+
+    wallMat0.diffuseColor = new BABYLON.Color3(r, g, b);
+    wallMat1.diffuseColor = new BABYLON.Color3(r, g, b);
+
+    wall0.material = wallMat0;
+    wall1.material = wallMat1;
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -120,10 +150,13 @@ function changeWall(_src) {
 //Change Floor Pattern
 function changeFloor(_src) {
     console.log(_src)
-    const floorMat = new BABYLON.StandardMaterial("Floor_Wood_01");
+    
+    const floorMat = new BABYLON.StandardMaterial('Floor 12"*24"');
+
     floorMat.diffuseTexture = new BABYLON.Texture(_src)
 
-    floor.material = floorMat;
+    floor0.material = floorMat;
+    floor1.material = floorMat;
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -140,10 +173,11 @@ function changeFloor(_src) {
 //Backsplash
 function changeBackSplash(_src) {
     console.log(_src)
-    const backSplash = new BABYLON.StandardMaterial("Backsplash_01");
+
+    const backSplash = new BABYLON.StandardMaterial("BackSplash");
     backSplash.diffuseTexture = new BABYLON.Texture(_src)
 
-    Backsplash_01.material = backSplash;
+    Backsplash.material = backSplash;
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -180,15 +214,36 @@ function changeCountertop(_src) {
 
 //base_cabinet2
 function changebaseCabinet2(_src) {
+    // console.log(_src)
+    // const counterTopMat = new BABYLON.StandardMaterial("Countertop_01");
+    // counterTopMat.diffuseTexture = new BABYLON.Texture(_src)
+
+    // base_cabinet1.material = counterTopMat;
+    // base_cabinet2.material = counterTopMat;
+    // base_cabinet3.material = counterTopMat;
+    // base_cabinet4.material = counterTopMat;
+
+    const color = _src.target.attributes.mycolor.value
     console.log(_src)
-    const counterTopMat = new BABYLON.StandardMaterial("Countertop_01");
-    counterTopMat.diffuseTexture = new BABYLON.Texture(_src)
 
-    base_cabinet1.material = counterTopMat;
-    base_cabinet2.material = counterTopMat;
-    base_cabinet3.material = counterTopMat;
-    base_cabinet4.material = counterTopMat;
+    var r = parseInt(color.substr(1, 2), 16)
+    var g = parseInt(color.substr(3, 2), 16)
+    var b = parseInt(color.substr(5, 2), 16)
 
+    r = r / 100;
+    g = g / 100;
+    b = b / 100;
+
+    const counterTopMat0 = new BABYLON.StandardMaterial("BasCabinet_primitive0");
+    const counterTopMat1 = new BABYLON.StandardMaterial("BasCabinet_primitive1");
+
+    console.log(`red: ${r}, green: ${g}, blue: ${b}`)
+
+    counterTopMat0.diffuseColor = new BABYLON.Color3(r, g, b);
+    counterTopMat1.diffuseColor = new BABYLON.Color3(r, g, b);
+
+    base_cabinet0.material = counterTopMat0;
+    base_cabinet1.material = counterTopMat1;
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -202,6 +257,47 @@ function changebaseCabinet2(_src) {
 
 }// end of changebaseCabinet2
 
+//cabinethandle
+function changecabinethandle(_src) {
+    // console.log(_src)
+    // const counterTopMat = new BABYLON.StandardMaterial("Countertop_01");
+    // counterTopMat.diffuseTexture = new BABYLON.Texture(_src)
+
+    // base_cabinet1.material = counterTopMat;
+    // base_cabinet2.material = counterTopMat;
+    // base_cabinet3.material = counterTopMat;
+    // base_cabinet4.material = counterTopMat;
+
+    const color = _src.target.attributes.mycolor.value
+    console.log(_src)
+
+    var r = parseInt(color.substr(1, 2), 16)
+    var g = parseInt(color.substr(3, 2), 16)
+    var b = parseInt(color.substr(5, 2), 16)
+
+    r = r / 100;
+    g = g / 100;
+    b = b / 100;
+
+    const cabinethandleMat = new BABYLON.StandardMaterial("Handles");
+
+    console.log(`red: ${r}, green: ${g}, blue: ${b}`)
+
+    cabinethandleMat.diffuseColor = new BABYLON.Color3(r, g, b);
+
+    cabinethandle.material = cabinethandleMat;
+
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+
+    // Watch for browser/canvas resize events
+    window.addEventListener("resize", function () {
+        engine.resize();
+    });
+    return scene;
+
+}// end of cabinethandle
 
 //Wall Cabinet
 function changeWallCabinet(_src) {
@@ -225,13 +321,38 @@ function changeWallCabinet(_src) {
 
 //Sink
 function changeSink(_src) {
-    console.log(_src)
-    const sink = new BABYLON.StandardMaterial("Wall Cabinet_01");
-    sink.diffuseTexture = new BABYLON.Texture(_src)
+    // console.log(_src)
+    // const sink = new BABYLON.StandardMaterial("Wall Cabinet_01");
+    // sink.diffuseTexture = new BABYLON.Texture(_src)
 
-    sink0.material = sink;
-    sink1.material = sink;
-    sink2.material = sink;
+    // sink0.material = sink;
+    // sink1.material = sink;
+    // sink2.material = sink;
+
+    const color = _src.target.attributes.mycolor.value
+    console.log(_src)
+
+    var r = parseInt(color.substr(1, 2), 16)
+    var g = parseInt(color.substr(3, 2), 16)
+    var b = parseInt(color.substr(5, 2), 16)
+
+    r = r / 100;
+    g = g / 100;
+    b = b / 100;
+
+    const sinkMat0 = new BABYLON.StandardMaterial("Faucet");
+    const sinkMat1 = new BABYLON.StandardMaterial("WashBasin_primitive0");
+    const sinkMat2 = new BABYLON.StandardMaterial("WashBasin_primitive1");
+
+    console.log(`red: ${r}, green: ${g}, blue: ${b}`)
+
+    sinkMat0.diffuseColor = new BABYLON.Color3(r, g, b);
+    sinkMat1.diffuseColor = new BABYLON.Color3(r, g, b);
+    sinkMat2.diffuseColor = new BABYLON.Color3(r, g, b);
+
+    sink0.material = sinkMat0;
+    sink1.material = sinkMat1;
+    sink2.material = sinkMat2;
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -257,7 +378,7 @@ function printColor(ev) {
     g = g / 100;
     b = b / 100;
 
-    const groundMat = new BABYLON.StandardMaterial("Wall_01");
+    const groundMat = new BABYLON.StandardMaterial("BasCabinet_primitive0");
 
     console.log(`red: ${r}, green: ${g}, blue: ${b}`)
 
