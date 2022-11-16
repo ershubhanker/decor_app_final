@@ -37,7 +37,8 @@ const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0.5, 0.6
 const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 10, height: 10 }, scene);
 
 var page_url = window.location.href
-var model_name = page_url.split("/")[6];
+var model_name = page_url.split("/")[6].split("#")[0];
+console.log(page_url)
 // console.log(model_name)
 // function set_model_name(_name){
 //     model_name = _name.split("/")[1];
@@ -62,13 +63,16 @@ const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_
     floor0 = scene.getMeshByName('Floor 12"*24"');
     floor1 = scene.getMeshByName('Floor 24"*24"');
 
-    wallCabinet = scene.getMeshByName("Wall Cabinet_01");
+    // wallCabinet = scene.getMeshByName("Wall Cabinet_01");
 
     countertop1 = scene.getMeshByName("Countertop_01");
     countertop2 = scene.getMeshByName("Countertop_02");
 
     base_cabinet0 = scene.getMeshByName("BasCabinet_primitive0");
     base_cabinet1 = scene.getMeshByName("BasCabinet_primitive1");
+    wallCabinet0 = scene.getMeshByName("WallCabinet_primitive0");
+    wallCabinet1 = scene.getMeshByName("WallCabinet_primitive1");
+
     // base_cabinet3 = scene.getMeshByName("Base cabinet_03");
     // base_cabinet4 = scene.getMeshByName("Base cabinet_04");
 
@@ -149,6 +153,7 @@ function changeWall(_src) {
 
 //Change Floor Pattern
 function changeFloor(_src) {
+
     console.log(_src)
     
     const floorMat = new BABYLON.StandardMaterial('Floor 12"*24"');
@@ -157,6 +162,34 @@ function changeFloor(_src) {
 
     floor0.material = floorMat;
     floor1.material = floorMat;
+
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+
+    // Watch for browser/canvas resize events
+    window.addEventListener("resize", function () {
+        engine.resize();
+    });
+    return scene;
+
+}
+
+//Change Floor Tile Size
+function changeFloorSize(_src) {
+
+    floor_size = _src.target.innerHTML;  // floor_size will be a string
+    
+    if (floor_size == 'Floor 12"*24"'){
+        _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
+        floor0.setEnabled(true);    // Setting 12x24 true
+        floor1.setEnabled(false);    // Setting 24x24 false
+    }
+    else{
+        _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
+        floor1.setEnabled(true);    // Setting 24x24 true
+        floor0.setEnabled(false);    // Setting 12x24 false
+    }
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -234,16 +267,22 @@ function changebaseCabinet2(_src) {
     g = g / 100;
     b = b / 100;
 
-    const counterTopMat0 = new BABYLON.StandardMaterial("BasCabinet_primitive0");
-    const counterTopMat1 = new BABYLON.StandardMaterial("BasCabinet_primitive1");
+    const basecabMat0 = new BABYLON.StandardMaterial("BasCabinet_primitive0");
+    const basecabMat1 = new BABYLON.StandardMaterial("BasCabinet_primitive1");
+    const wallcabMat0 = new BABYLON.StandardMaterial("WallCabinet_primitive0");
+    const wallcabMat1 = new BABYLON.StandardMaterial("WallCabinet_primitive1");
 
     console.log(`red: ${r}, green: ${g}, blue: ${b}`)
 
-    counterTopMat0.diffuseColor = new BABYLON.Color3(r, g, b);
-    counterTopMat1.diffuseColor = new BABYLON.Color3(r, g, b);
+    basecabMat0.diffuseColor = new BABYLON.Color3(r, g, b);
+    basecabMat1.diffuseColor = new BABYLON.Color3(r, g, b);
+    wallcabMat0.diffuseColor = new BABYLON.Color3(r, g, b);
+    wallcabMat1.diffuseColor = new BABYLON.Color3(r, g, b);
 
-    base_cabinet0.material = counterTopMat0;
-    base_cabinet1.material = counterTopMat1;
+    base_cabinet0.material = basecabMat0;
+    base_cabinet1.material = basecabMat1;
+    wallCabinet0.material = wallcabMat0;
+    wallCabinet1.material = wallcabMat1;
 
     engine.runRenderLoop(function () {
         scene.render();

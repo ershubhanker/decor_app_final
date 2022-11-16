@@ -226,6 +226,17 @@
                                         novalidate="">
                                         {% csrf_token %}
                                         <!-- {{ floor_form.texture_wall }} -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Choose Floor Size
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                                <button class="dropdown-item" onclick="changeFloorSize(event)" type="button" name="floor_dropdown">Floor 12"*24"</button>
+                                                <button class="dropdown-item" onclick="changeFloorSize(event)" type="button" name="floor_dropdown">Floor 24"*24"</button>
+                                            </div>
+                                        </div>
                                         <input class="form-control form-control-sm" id="floor_input"
                                             name="texture_Floor" type="file" multiple>
                                         <input type="submit" name="floor" />
@@ -234,7 +245,7 @@
                                 <div class="horizontal-scroll hstack gap-2">
                                     {% for floor_img in floor_textures %}
                                     <img onclick="changeFloor(this.src)" src="{{floor_img.texture_Floor.url}}"
-                                        alt="no img" style="aspect-ratio: 1 / 1;" onclick="changeWall(event)">
+                                        alt="no img" style="aspect-ratio: 1 / 1;" name = "floor_texture_event">
                                     {% endfor %}
                                 </div>
                             </li>
