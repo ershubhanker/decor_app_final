@@ -46,6 +46,12 @@
     overflow-y: scroll;
 }
 
+.color-vertical-scrollable {
+    height: 300px;
+    overflow-y: scroll;
+    z-index: 22;
+}
+
 .horizontal-scroll{
     height: 100%;
     overflow-x: scroll;

@@ -8,6 +8,7 @@ from json import dumps
 from django.http import JsonResponse
 import ast
 from django.core import serializers
+from django.conf import settings
 
 # user Login page function
 
@@ -140,6 +141,15 @@ def rendermodel(request):
                                      roomtype=room_type, backsplashuser=request.user)
                     val.save()
                 return HttpResponseRedirect("#")
+        
+        elif 'countertop' in request.POST:
+            countertop = CounterTopForm(request.POST, request.FILES)
+            if countertop.is_valid():
+                for img_object in request.FILES.getlist('countertop'):
+                    val = Countertop(counter_top=img_object,
+                                     roomtype=room_type, countertopuser=request.user)
+                    val.save()
+                return HttpResponseRedirect("#")
 
         elif 'cabinet' in request.POST:
             cab = CabinetForm(request.POST, request.FILES)
@@ -159,12 +169,21 @@ def rendermodel(request):
                 val.save()
                 return HttpResponseRedirect("#")
 
-        elif 'sinkfaucet' in request.POST:
-            sinkfau = SinkFaucetForm(request.POST, request.FILES)
-            if sinkfau.is_valid():
-                img_object = sinkfau.data['sinkfaucet']
-                val = SinkFaucet(sinkfaucet=img_object,
-                                 roomtype=room_type, sinkfaucetuser=request.user)
+        elif 'sink' in request.POST:
+            sink = SinkForm(request.POST, request.FILES)
+            if sink.is_valid():
+                img_object = sink.data['sink']
+                val = Sink(sink=img_object,
+                                 roomtype=room_type, sinkuser=request.user)
+                val.save()
+                return HttpResponseRedirect("#")
+            
+        elif 'faucet' in request.POST:
+            faucet = FaucetForm(request.POST, request.FILES)
+            if faucet.is_valid():
+                img_object = faucet.data['faucet']
+                val = Faucet(faucet=img_object,
+                                 roomtype=room_type, faucetuser=request.user)
                 val.save()
                 return HttpResponseRedirect("#")
 
@@ -176,31 +195,53 @@ def rendermodel(request):
                             walluser=request.user)
                 val.save()
                 return HttpResponseRedirect("#")
+        
+        elif 'door' in request.POST:
+            door = DoorForm(request.POST, request.FILES)
+            if door.is_valid():
+                img_object = door.data['door']
+                val = Door(door=img_object, roomtype=room_type,
+                            dooruser=request.user)
+                val.save()
+                return HttpResponseRedirect("#")
+            
     else:
         floor_form = FloorUploadForm()
         backsplash_form = BackSplashForm()
+        countertop_form = CounterTopForm()
         cabinet_form = CabinetForm()
-        cabinetHandle_form = CabinetForm()
-        sinkfaucet_form = SinkFaucetForm()
-        walls_form = SinkFaucetForm()
+        cabinetHandle_form = CabinetHandleForm()
+        sink_form = SinkForm()
+        faucet_form = FaucetForm()
+        walls_form = WallsForm()
+        door_form = DoorForm()
 
         floor_show = Floor.objects.filter(
             roomuser=request.user).order_by("-id")
         bcsplash_show = Backsplash.objects.filter(
             backsplashuser=request.user).order_by("-id")
+        countertop_show = Countertop.objects.filter(
+            countertopuser=request.user).order_by("-id")
         cabinet_show = Cabinet.objects.filter(
             cabinetuser=request.user).order_by("-id")
         cabinethandle_show = CabinetHandle.objects.filter(
             cabinethandleuser=request.user).order_by("-id")
-        sinkfaucet_show = SinkFaucet.objects.filter(
-            sinkfaucetuser=request.user).order_by("-id")
+        sink_show = Sink.objects.filter(
+            sinkuser=request.user).order_by("-id")
+        faucet_show = Faucet.objects.filter(
+            faucetuser=request.user).order_by("-id")
         walls_show = Walls.objects.filter(
             walluser=request.user).order_by("-id")
+        door_show = Door.objects.filter(
+            dooruser=request.user).order_by("-id")
 
         return render(request, 'render.html', {"floor_textures": floor_show,
                                                "bcsplash": bcsplash_show,
                                                "cabinet_textures": cabinet_show,
                                                "cabinetHandle_textures": cabinethandle_show,
-                                               "sinkFaucet_textures": sinkfaucet_show,
-                                               "walls_textures": walls_show
+                                               "sink_textures": sink_show,
+                                               "faucet_textures":faucet_show,
+                                               "walls_textures": walls_show,
+                                               "door_textures": door_show,
+                                               "countertop_textures":countertop_show,
                                                })

@@ -233,8 +233,10 @@
                                                 Choose Floor Size
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                                <button class="dropdown-item" onclick="changeFloorSize(event)" type="button" name="floor_dropdown">Floor 12"*24"</button>
-                                                <button class="dropdown-item" onclick="changeFloorSize(event)" type="button" name="floor_dropdown">Floor 24"*24"</button>
+                                                <button class="dropdown-item" onclick="changeFloorSize(event)"
+                                                    type="button" name="floor_dropdown">Floor 12"*24"</button>
+                                                <button class="dropdown-item" onclick="changeFloorSize(event)"
+                                                    type="button" name="floor_dropdown">Floor 24"*24"</button>
                                             </div>
                                         </div>
                                         <input class="form-control form-control-sm" id="floor_input"
@@ -245,7 +247,7 @@
                                 <div class="horizontal-scroll hstack gap-2">
                                     {% for floor_img in floor_textures %}
                                     <img onclick="changeFloor(this.src)" src="{{floor_img.texture_Floor.url}}"
-                                        alt="no img" style="aspect-ratio: 1 / 1;" name = "floor_texture_event">
+                                        alt="no img" style="aspect-ratio: 1 / 1;" name="floor_texture_event">
                                     {% endfor %}
                                 </div>
                             </li>
@@ -299,28 +301,51 @@
                                 </div>
                                 <!-- </li> -->
                             </li>
-                            <!-- --------------------------------------Sink Faucet/changeSink------------------------------------------ -->
-                            <button class="collapsible">Sink Faucet</button>
+                            <!-- --------------------------------------Sink/changeSink------------------------------------------ -->
+                            <button class="collapsible">Sink</button>
                             <li class="list-group-item-primary content">
                                 <div style="border: 1px; margin-top: 10px;">
-                                    <form enctype="multipart/form-data" id="id_ajax_upload_sinkFaucet" method="POST"
+                                    <form enctype="multipart/form-data" id="id_ajax_upload_sink" method="POST"
                                         novalidate="">
                                         {% csrf_token %}
-                                        <!-- {{ sinkFaucet_form.texture_wall }} -->
-                                        <input type="color" class="form-control form-control-color w-25 "
-                                            id="sinkFaucetID" value="#563d7c" title="Choose your color"
-                                            name="sinkfaucet" style="margin-bottom: 10px;">
+                                        <!-- {{ sink_form.texture_wall }} -->
+                                        <input type="color" class="form-control form-control-color w-25 " id="sinkID"
+                                            value="#563d7c" title="Choose your color" name="sink"
+                                            style="margin-bottom: 10px;">
                                         <input type="submit" />
                                     </form>
                                 </div>
                                 <!-- <li class="list-group-item list-group-item-primary"> -->
                                 <!-- <li class=""> -->
                                 <div class="horizontal-scroll hstack gap-2">
-                                    {% for sinkFaucet_img in sinkFaucet_textures %}
+                                    {% for sink_img in sink_textures %}
                                     <input type="button" class="btn"
-                                        style="background-color: {{sinkFaucet_img.sinkfaucet}}; border: 5px solid white"
-                                        alt="no img" onclick="changeSink(event)"
-                                        mycolor="{{sinkFaucet_img.sinkfaucet}}">
+                                        style="background-color: {{sink_img.sink}}; border: 5px solid white"
+                                        alt="no img" onclick="changeSink(event)" mycolor="{{sink_img.sink}}">
+                                    {% endfor %}
+                                </div>
+                            </li>
+                            <!-- --------------------------------------Faucet/changeFaucet------------------------------------------ -->
+                            <button class="collapsible">Faucet</button>
+                            <li class="list-group-item-primary content">
+                                <div style="border: 1px; margin-top: 10px;">
+                                    <form enctype="multipart/form-data" id="id_ajax_upload_faucet" method="POST"
+                                        novalidate="">
+                                        {% csrf_token %}
+                                        <!-- {{ faucet_form.texture_wall }} -->
+                                        <input type="color" class="form-control form-control-color w-25 " id="faucetID"
+                                            value="#563d7c" title="Choose your color" name="faucet"
+                                            style="margin-bottom: 10px;">
+                                        <input type="submit" />
+                                    </form>
+                                </div>
+                                <!-- <li class="list-group-item list-group-item-primary"> -->
+                                <!-- <li class=""> -->
+                                <div class="horizontal-scroll hstack gap-2">
+                                    {% for faucet_img in faucet_textures %}
+                                    <input type="button" class="btn"
+                                        style="background-color: {{faucet_img.faucet}}; border: 5px solid white"
+                                        alt="no img" onclick="changeFaucet(event)" mycolor="{{faucet_img.faucet}}">
                                     {% endfor %}
                                 </div>
                             </li>
@@ -348,6 +373,30 @@
                                     {% endfor %}
                                 </div>
                             </li>
+                            <!-- --------------------------------------Door/changeDoor------------------------------------------ -->
+                            <button class="collapsible">Door</button>
+                            <li class="list-group-item-primary content">
+                                <div style="border: 1px; margin-top: 10px;">
+                                    <form enctype="multipart/form-data" id="id_ajax_upload_door" method="POST"
+                                        novalidate="">
+                                        {% csrf_token %}
+                                        <!-- {{ door_form.texture_wall }} -->
+                                        <input type="color" class="form-control form-control-color w-25 " id="doorID"
+                                            value="#563d7c" title="Choose your color" name="door"
+                                            style="margin-bottom: 10px;">
+                                        <input type="submit" />
+                                    </form>
+                                </div>
+                                <!-- <li class="list-group-item list-group-item-primary"> -->
+                                <!-- <li class=""> -->
+                                <div class="horizontal-scroll hstack gap-2">
+                                    {% for door_img in door_textures %}
+                                    <input type="button" class="btn"
+                                        style="background-color: {{door_img.door}}; border: 5px solid white"
+                                        alt="no img" onclick="changeDoor(event)" mycolor="{{door_img.door}}">
+                                    {% endfor %}
+                                </div>
+                            </li>
                             <!-- --------------------------------------Backsplash------------------------------------------ -->
                             <button class="collapsible">Backsplash</button>
                             <li class="list-group-item-primary content">
@@ -366,7 +415,30 @@
                                 <div class="horizontal-scroll hstack gap-2">
                                     {% for backsplash_img in bcsplash %}
                                     <img onclick="changeBackSplash(this.src)" src="{{backsplash_img.back_splash.url}}"
-                                        alt="no img" style="aspect-ratio: 1 / 1;" onclick="changeBackSplash(event)">
+                                        alt="no img" style="aspect-ratio: 1 / 1;">
+                                    {% endfor %}
+                                </div>
+                                <!-- </li> -->
+                            </li>
+                            <!-- --------------------------------------CounterTop------------------------------------------ -->
+                            <button class="collapsible">Countertop</button>
+                            <li class="list-group-item-primary content">
+                                <div style="border: 1px; margin-top: 10px;">
+                                    <form enctype="multipart/form-data" id="id_ajax_upload_countertop" method="POST"
+                                        novalidate="">
+                                        {% csrf_token %}
+                                        <!-- {{ countertop_form.texture_wall }} -->
+                                        <input class="form-control form-control-sm" onchange="printColor(event)"
+                                            id="countertop_input" name="countertop" type="file" multiple>
+                                        <input type="submit" name="countertop" />
+                                    </form>
+                                </div>
+                                <!-- <li class="list-group-item list-group-item-primary"> -->
+                                <!-- <li class=""> -->
+                                <div class="horizontal-scroll hstack gap-2">
+                                    {% for countertop_img in countertop_textures %}
+                                    <img onclick="changeCountertop(this.src)" src="{{countertop_img.counter_top.url}}"
+                                        alt="no img" style="aspect-ratio: 1 / 1;">
                                     {% endfor %}
                                 </div>
                                 <!-- </li> -->

@@ -42,6 +42,11 @@ class BackSplashForm(forms.ModelForm):
         model = Backsplash
         fields = ['back_splash',]
         
+class CounterTopForm(forms.ModelForm):
+    class Meta:
+        model = Countertop
+        fields = ['counter_top',]
+        
 class CabinetForm(forms.ModelForm):
     class Meta:
         model = Cabinet
@@ -52,12 +57,22 @@ class CabinetHandleForm(forms.ModelForm):
         model = CabinetHandle
         fields = ['cabinethandle']
 
-class SinkFaucetForm(forms.ModelForm):
+class SinkForm(forms.ModelForm):
     class Meta:
-        model = SinkFaucet
-        fields = ['sinkfaucet']
+        model = Sink
+        fields = ['sink']
+
+class FaucetForm(forms.ModelForm):
+    class Meta:
+        model = Faucet
+        fields = ['faucet']
         
 class WallsForm(forms.ModelForm):
     class Meta:
         model = Walls
         fields = ['walls']
+        
+class DoorForm(forms.ModelForm):
+    class Meta:
+        model = Door
+        fields = ['door']

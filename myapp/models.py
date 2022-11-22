@@ -52,6 +52,14 @@ class Backsplash(models.Model):
 
     def __str__(self):
         return "%s" % (self.roomtype)
+
+class Countertop(models.Model):
+    counter_top = models.ImageField(blank=True,upload_to ='img/backsplash')
+    roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    countertopuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return "%s" % (self.roomtype)
       
 class Cabinet(models.Model):
     cabinet = models.CharField(blank=True, max_length=10)
@@ -69,10 +77,18 @@ class CabinetHandle(models.Model):
     def __str__(self):
         return "%s" % (self.roomtype)
   
-class SinkFaucet(models.Model):
-    sinkfaucet = models.CharField(blank=True, max_length=10)
+class Sink(models.Model):
+    sink = models.CharField(blank=True, max_length=10)
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
-    sinkfaucetuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    sinkuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    def __str__(self):
+        return "%s" % (self.roomtype)
+
+class Faucet(models.Model):
+    faucet = models.CharField(blank=True, max_length=10)
+    roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    faucetuser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return "%s" % (self.roomtype)
@@ -81,6 +97,14 @@ class Walls(models.Model):
     walls = models.CharField(blank=True, max_length=10)
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
     walluser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    def __str__(self):
+        return "%s" % (self.roomtype)
+    
+class Door(models.Model):
+    door = models.CharField(blank=True, max_length=10)
+    roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    dooruser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return "%s" % (self.roomtype)
