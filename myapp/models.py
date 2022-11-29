@@ -108,3 +108,12 @@ class Door(models.Model):
     
     def __str__(self):
         return "%s" % (self.roomtype)
+
+class Colors(models.Model):
+    color_name = models.CharField(blank=True, max_length=10)
+    color_number = models.CharField(blank=True, max_length=10)
+    color_hex = models.CharField(blank=True, max_length=10)
+    color_rgb = models.CharField(blank=True, max_length=20)
+    
+    def __str__(self):
+        return "%s" % (self.color_name)

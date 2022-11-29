@@ -53,12 +53,13 @@ console.log(page_url)
 // }
 
 const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_name, scene).then((result) => {
+    // const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", "YOS_P_kitchen_21st_Oct_3BjjgoI.glb", scene).then((result) => { 
 
 
     // It gives value of all the present components in a model
-    for (let i = 0; i < result.meshes.length; i++){
-        console.log(result.meshes[i].id)
-    }
+    // for (let i = 0; i < result.meshes.length; i++) {
+    //     console.log(result.meshes[i].id)
+    // }
 
     // wall = scene.getMeshByName("Walls_primitive0");
 
@@ -176,7 +177,7 @@ function changeWall(_src) {
 function changeFloor(_src) {
 
     console.log(_src)
-    
+
     const floorMat = new BABYLON.StandardMaterial('Floor 12"*24"');
 
     floorMat.diffuseTexture = new BABYLON.Texture(_src)
@@ -200,13 +201,13 @@ function changeFloor(_src) {
 function changeFloorSize(_src) {
 
     floor_size = _src.target.innerHTML;  // floor_size will be a string
-    
-    if (floor_size == 'Floor 12"*24"'){
+
+    if (floor_size == 'Floor 12"*24"') {
         _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
         floor0.setEnabled(true);    // Setting 12x24 true
         floor1.setEnabled(false);    // Setting 24x24 false
     }
-    else{
+    else {
         _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
         floor1.setEnabled(true);    // Setting 24x24 true
         floor0.setEnabled(false);    // Setting 12x24 false

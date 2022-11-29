@@ -155,9 +155,11 @@ def rendermodel(request):
             cab = CabinetForm(request.POST, request.FILES)
             if cab.is_valid():
                 img_object = cab.data['cabinet']
-                val = Cabinet(cabinet=img_object,
-                              roomtype=room_type, cabinetuser=request.user)
-                val.save()
+                color_input = Colors.objects.filter(color_name__iexact = img_object)
+                if len(color_input) != 0:
+                    val = Cabinet(cabinet=color_input[0].color_hex,
+                                roomtype=room_type, cabinetuser=request.user)
+                    val.save()
                 return HttpResponseRedirect("#")
 
         elif 'cabinethandle' in request.POST:
