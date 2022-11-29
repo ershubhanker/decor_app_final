@@ -1,0 +1,74 @@
+{% load static %}
+
+<!-- Main Header-->
+<header class="main-header header-style-four">
+    <div class="header-top">
+        <div class="auto-container clearfix">
+            <div class="top-right">
+                <ul class="contact-info">
+                    <li><span>PHONE :</span> (+84) 867-557-243</li>
+                    <li><span>EMAIL :</span> <a href="#">Support@yourdomain.com</a></li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+
+    <div class="header-lower">
+        <div class="auto-container">
+            <div class="main-box clearfix">
+                <div class="logo-box">
+                    <div class="logo"><a href="{% url 'myapp:about' %}"><img src="{% static 'home_resource/images/logo-2.png' %}" alt="" title=""></a></div>
+                </div>
+
+                <div class="nav-outer">
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md ">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->      
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon flaticon-menu-button"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li><a href="{% url 'myapp:home' %}">Home</a></li>
+                                <li><a href="{% url 'myapp:about' %}">About</a></li>
+                                <li><a href="{% url 'myapp:service' %}">Services</a></li>
+                                <li><a href="{% url 'myapp:project' %}">Projects</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Shop</a></li>
+                                <li><a href="{% url 'myapp:contact' %}">Contact</a></li>
+                                <!-- <li><a href="{% url 'myapp:login' %}">Login</a></li> -->
+                                <li><a href="{% url 'myapp:login' %}?next={{request.path}}">Login</a></li>
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->                        
+
+                    <!-- Outer Box-->
+                    <div class="outer-box">
+                        <!--Search Box-->
+                        <div class="search-box-outer">
+                            <div class="dropdown">
+                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                    <li class="panel-outer">
+                                        <div class="form-container">
+                                            <form method="post" action="#">
+                                                <div class="form-group">
+                                                    <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                    <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--End Main Header -->
