@@ -8,16 +8,16 @@
     <meta charset="utf-8">
     <title>Contra - Interior Creator HTML Template | Projects</title>
     <!-- Stylesheets -->
-    <link href="{% static 'home_resource/css/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'home_resource/css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'home_resource/css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/home_style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
     <!--Color Switcher Mockup-->
-    <link href="{% static 'home_resource/css/color-switcher-design.css' %}" rel="stylesheet">
+    <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
     <!--Color Themes-->
-    <link id="theme-color-file" href="{% static 'home_resource/css/color-themes/default-theme.css' %}" rel="stylesheet">
+    <link id="theme-color-file" href="{% static 'css/color-themes/default-theme.css' %}" rel="stylesheet">
 
-    <link rel="shortcut icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
-    <link rel="icon" href="{% static 'home_resource/images/favicon.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -35,7 +35,7 @@
         {% include "header1.html" %}
 
         <!--Page Title-->
-        <section class="page-title" style="background-image:url(/static/home_resource/images/background/10.jpg);">
+        <section class="page-title" style="background-image:url(/static/images/background/10.jpg);">
             <div class="auto-container">
                 <div class="inner-container clearfix">
                     <div class="title-box">
@@ -77,12 +77,12 @@
                             {% endif %}
                             {% endfor %}
                             <div class="image-box">
-                                <!-- <figure class="image"><img src="{% static 'home_resource/images/gallery/2-1.jpg' %}" alt=""></figure> -->
+                                <!-- <figure class="image"><img src="{% static 'images/gallery/2-1.jpg' %}" alt=""></figure> -->
                                 <figure class="image"><img src="/upload/{{room_value.room_img}}" alt=""></figure>
                                 <div class="overlay-box">
                                     <h4><a href="{% url 'myapp:project' %}">Luxury Home<br>Project</a></h4>
                                     <div class="btn-box">
-                                        <!-- <a href="{% static 'home_resource/images/gallery/2-1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
+                                        <!-- <a href="{% static 'images/gallery/2-1.jpg' %}" class="lightbox-image" data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
                                         <!-- <a href="/upload/{{room_value.room_img}}" class="lightbox-image"
                                             data-fancybox="gallery"><i class="fa fa-search"></i></a> -->
                                         <a href="{% url 'myapp:render'%}?path={{room_value.upload}}"><i
@@ -120,17 +120,17 @@
 
     <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div>
-    <script src="{% static 'home_resource/js/jquery.js' %}"></script>
-    <script src="{% static 'home_resource/js/popper.min.js' %}"></script>
-    <script src="{% static 'home_resource/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'home_resource/js/jquery.fancybox.js' %}"></script>
-    <script src="{% static 'home_resource/js/owl.js' %}"></script>
-    <script src="{% static 'home_resource/js/wow.js' %}"></script>
-    <script src="{% static 'home_resource/js/appear.js' %}"></script>
-    <script src="{% static 'home_resource/js/mixitup.js' %}"></script>
-    <script src="{% static 'home_resource/js/script.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/mixitup.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <!-- Color Setting -->
-    <script src="{% static 'home_resource/js/color-settings.js' %}"></script>
+    <script src="{% static 'js/color-settings.js' %}"></script>
     <!-- Test File -->
     <script src="{% static 'test.js' %}"></script>
 </body>

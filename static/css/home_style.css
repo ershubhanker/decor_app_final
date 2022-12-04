@@ -147,7 +147,7 @@ p,.text{
 .auto-container{
 	position:static;
 	max-width:1200px;
-	padding:0px 15px;
+	padding:0px 0px;
 	margin:0 auto;
 }
 

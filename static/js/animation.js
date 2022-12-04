@@ -57,9 +57,9 @@ const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_
 
 
     // It gives value of all the present components in a model
-    // for (let i = 0; i < result.meshes.length; i++) {
-    //     console.log(result.meshes[i].id)
-    // }
+    for (let i = 0; i < result.meshes.length; i++) {
+        console.log(result.meshes[i].id)
+    }
 
     // wall = scene.getMeshByName("Walls_primitive0");
 
