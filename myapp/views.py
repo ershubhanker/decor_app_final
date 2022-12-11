@@ -120,6 +120,13 @@ def Faqpage(request):
 
 @login_required
 def rendermodel(request):
+    if 'term' in request.GET:
+        qs = Colors.objects.filter(color_name__icontains=request.GET.get('term'))
+        titles = list()
+        for product in qs:
+            titles.append(product.color_name)
+        return JsonResponse(titles, safe=False)
+    
     if request.method == 'POST':
         room_type = RoomType(first_name="Kitchen")
         room_type.save()
@@ -236,6 +243,8 @@ def rendermodel(request):
             walluser=request.user).order_by("-id")
         door_show = Door.objects.filter(
             dooruser=request.user).order_by("-id")
+        
+        color_names = Colors.objects.all()
 
         return render(request, 'render.html', {"floor_textures": floor_show,
                                                "bcsplash": bcsplash_show,
@@ -246,4 +255,5 @@ def rendermodel(request):
                                                "walls_textures": walls_show,
                                                "door_textures": door_show,
                                                "countertop_textures":countertop_show,
+                                               "color_names":color_names
                                                })

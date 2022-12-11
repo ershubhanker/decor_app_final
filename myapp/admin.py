@@ -5,6 +5,5 @@ from .models import *
 
 admin.site.register(RoomCategory)
 admin.site.register(Room)
-admin.site.register(Colors)
 admin.site.register(Cabinet)
 admin.site.register(Faucet)

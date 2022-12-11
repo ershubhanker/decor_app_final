@@ -45,7 +45,7 @@ const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 10, height: 1
 
 var page_url = window.location.href
 var model_name = page_url.split("/")[6].split("#")[0];
-console.log(page_url)
+
 // console.log(model_name)
 // function set_model_name(_name){
 //     model_name = _name.split("/")[1];
@@ -57,19 +57,33 @@ const result = BABYLON.SceneLoader.ImportMeshAsync("", "/upload/models/", model_
 
 
     // It gives value of all the present components in a model
-    for (let i = 0; i < result.meshes.length; i++) {
-        console.log(result.meshes[i].id)
-    }
+    // for (let i = 0; i < result.meshes.length; i++) {
+    //     console.log(result.meshes[i].id)
+    // }
 
     // wall = scene.getMeshByName("Walls_primitive0");
 
-    wall0 = scene.getMeshByName("Walls_primitive0");
-    wall1 = scene.getMeshByName("Walls_primitive1");
+    wall0 = scene.getMeshByName("Wall_Full_12x12");
+    wall1 = scene.getMeshByName("Wall_Full_24x24");
+    wall2 = scene.getMeshByName("Wall_Full_12x24");
+    wall3 = scene.getMeshByName("Wall_Full_Grout");
+    wall4 = scene.getMeshByName("Wall_Full_3x6");
+    wall5 = scene.getMeshByName("Wall_Full_6x10");
+    wall6 = scene.getMeshByName("Wall_Half_12x12");
+    wall7 = scene.getMeshByName("Wall_Half_24x24");
+    wall8 = scene.getMeshByName("Wall_Half_12x24");
+    wall9 = scene.getMeshByName("Wall_Half_Grout");
+    wall10 = scene.getMeshByName("Wall_Half_3x6");
+    wall11 = scene.getMeshByName("Wall_Half_6x10");
+
+    // wall1 = scene.getMeshByName("Walls_primitive1");
 
     // floor = scene.getMeshByName("Floor_Wood_01");
 
-    floor0 = scene.getMeshByName('Floor 12"*24"');
-    floor1 = scene.getMeshByName('Floor 24"*24"');
+    floor0 = scene.getMeshByName('Floor_Tiles_12X24');
+    floor1 = scene.getMeshByName('Floor_Tiles_24X24');
+    floor2 = scene.getMeshByName('Floor_Tiles_12X12');
+    floor3 = scene.getMeshByName('Floor_Grout');
 
     // wallCabinet = scene.getMeshByName("Wall Cabinet_01");
 
@@ -150,16 +164,73 @@ function changeWall(_src) {
     g = g / 100;
     b = b / 100;
 
-    const wallMat0 = new BABYLON.StandardMaterial("Walls_primitive0");
-    const wallMat1 = new BABYLON.StandardMaterial("Walls_primitive1");
+    const wallMat0 = new BABYLON.StandardMaterial("Wall_Full_12x12");
+    const wallMat1 = new BABYLON.StandardMaterial("Wall_Full_24x24");
+    const wallMat2 = new BABYLON.StandardMaterial("Wall_Full_12x24");
+    const wallMat3 = new BABYLON.StandardMaterial("Wall_Full_Grout");
+    const wallMat4 = new BABYLON.StandardMaterial("Wall_Full_3x6");
+    const wallMat5 = new BABYLON.StandardMaterial("Wall_Full_6x10");
+    const wallMat6 = new BABYLON.StandardMaterial("Wall_Half_12x12");
+    const wallMat7 = new BABYLON.StandardMaterial("Wall_Half_24x24");
+    const wallMat8 = new BABYLON.StandardMaterial("Wall_Half_12x24");
+    const wallMat9 = new BABYLON.StandardMaterial("Wall_Half_Grout");
+    const wallMat10 = new BABYLON.StandardMaterial("Wall_Half_3x6");
+    const wallMat11 = new BABYLON.StandardMaterial("Wall_Half_6x10");
+
+    // const wallMat1 = new BABYLON.StandardMaterial("Walls_primitive1");
 
     console.log(`red: ${r}, green: ${g}, blue: ${b}`)
 
     wallMat0.diffuseColor = new BABYLON.Color3(r, g, b);
-    wallMat1.diffuseColor = new BABYLON.Color3(r, g, b);
+
+    // wallMat1.diffuseColor = new BABYLON.Color3(r, g, b);
 
     wall0.material = wallMat0;
-    wall1.material = wallMat1;
+    wall1.material = wallMat0;
+    wall2.material = wallMat0;
+    wall3.material = wallMat0;
+    wall4.material = wallMat0;
+    wall5.material = wallMat0;
+    wall6.material = wallMat0;
+    wall7.material = wallMat0;
+    wall8.material = wallMat0;
+    wall9.material = wallMat0;
+    wall10.material = wallMat0;
+    wall11.material = wallMat0;
+
+    // wall1.material = wallMat1;
+
+    engine.runRenderLoop(function () {
+        scene.render();
+    });
+
+    // Watch for browser/canvas resize events
+    window.addEventListener("resize", function () {
+        engine.resize();
+    });
+    return scene;
+
+}
+
+//Change Wall Tile Size
+function changeWallSize(_src) {
+
+    wall_size = _src.target.innerHTML;  // wall_size will be a string
+    _src.target.parentElement.previousElementSibling.innerHTML = wall_size;
+    console.log(wall_size);
+
+    var wall_string_array = ["Wall Full 12X12", "Wall Full 24X24", "Wall Full 12X24", "Wall Full Grout", "Wall Full 3X6", "Wall Full 6X10", "Wall Half 12X12", "Wall Half 24X24", "Wall Half 12X24", "Wall Half Grout", "Wall Half 3X6", "Wall Half 6X10"];
+    var wall_array = [wall0, wall1, wall2, wall3, wall4, wall5, wall6, wall7, wall8, wall9, wall10, wall11];
+
+    for (let i = 0; i < wall_string_array.length; i++) {
+        if (wall_string_array[i] == wall_size){
+            wall_array[i].setEnabled(true);
+            console.log(wall_array[i], "activated!");
+        }
+        else{
+            wall_array[i].setEnabled(false);
+        }
+    }
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -178,12 +249,20 @@ function changeFloor(_src) {
 
     console.log(_src)
 
-    const floorMat = new BABYLON.StandardMaterial('Floor 12"*24"');
+    const floorMat0 = new BABYLON.StandardMaterial('Floor_Tiles_12X24');
+    const floorMat1 = new BABYLON.StandardMaterial('Floor_Tiles_24X24');
+    const floorMat2 = new BABYLON.StandardMaterial('Floor_Tiles_12X12');
+    const floorMat3 = new BABYLON.StandardMaterial('Floor_Grout');
 
-    floorMat.diffuseTexture = new BABYLON.Texture(_src)
+    floorMat0.diffuseTexture = new BABYLON.Texture(_src)
+    floorMat1.diffuseTexture = new BABYLON.Texture(_src)
+    floorMat2.diffuseTexture = new BABYLON.Texture(_src)
+    floorMat3.diffuseTexture = new BABYLON.Texture(_src)
 
-    floor0.material = floorMat;
-    floor1.material = floorMat;
+    floor0.material = floorMat0;
+    floor1.material = floorMat1;
+    floor2.material = floorMat2;
+    floor3.material = floorMat3;
 
     engine.runRenderLoop(function () {
         scene.render();
@@ -201,16 +280,35 @@ function changeFloor(_src) {
 function changeFloorSize(_src) {
 
     floor_size = _src.target.innerHTML;  // floor_size will be a string
+    _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
+    console.log(floor_size);
 
-    if (floor_size == 'Floor 12"*24"') {
-        _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
+    if (floor_size == 'Floor 12X24') {
+        // _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
         floor0.setEnabled(true);    // Setting 12x24 true
         floor1.setEnabled(false);    // Setting 24x24 false
+        floor2.setEnabled(false);    // Setting 12x12 false
+        floor3.setEnabled(false);    // Setting Grout false
     }
-    else {
-        _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
+    else if (floor_size == 'Floor 24X24') {
+
         floor1.setEnabled(true);    // Setting 24x24 true
         floor0.setEnabled(false);    // Setting 12x24 false
+        floor2.setEnabled(false);    // Setting 12x12 false
+        floor3.setEnabled(false);    // Setting Grout false
+    }
+    else if (floor_size == 'Floor Grout') {
+        floor3.setEnabled(true);    // Setting Grout true
+        floor0.setEnabled(false);    // Setting 12x24 false
+        floor1.setEnabled(false);    // Setting 12x12 false
+        floor2.setEnabled(false);    // Setting 12x12 false
+    }
+    else {
+        // _src.target.parentElement.previousElementSibling.innerHTML = floor_size;
+        floor2.setEnabled(true);    // Setting 12x12 true
+        floor1.setEnabled(false);    // Setting 24x24 false
+        floor0.setEnabled(false);    // Setting 12x24 false
+        floor3.setEnabled(false);    // Setting Grout false
     }
 
     engine.runRenderLoop(function () {

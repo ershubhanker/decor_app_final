@@ -12,17 +12,19 @@
     <link href="{% static 'css/home_style.css' %}" rel="stylesheet">
     <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
     <link href="{% static 'css/render_style.css' %}" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="{% static 'index1.css' %}"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
     <!--Color Switcher Mockup-->
     <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+
     <!--Color Themes-->
     <link id="theme-color-file" href="{% static 'css/color-themes/default-theme.css' %}" rel="stylesheet">
 
     <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
     <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -30,20 +32,17 @@
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
-    </script>
+    <!-- jQuery Scripts -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
-    <!-- <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
-        rel="stylesheet" type="text/css" /> -->
-    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
 <body>
     <div class="page-wrapper">
-        <!-- Preloader -->  
+        <!-- Preloader -->
         <div class="preloader"></div>
 
         <!-- Uses header1 -->
@@ -84,13 +83,16 @@
                                                 aria-expanded="false">
                                                 Choose Floor Size
                                             </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <div class="dropdown-menu  color-vertical-scrollable"
+                                                aria-labelledby="dropdownMenu2">
                                                 <button class="dropdown-item" onclick="changeFloorSize(event)"
-                                                    type="button" name="floor_dropdown">Floor 12"*12"</button>
+                                                    type="button" name="floor_dropdown">Floor 12X12</button>
                                                 <button class="dropdown-item" onclick="changeFloorSize(event)"
-                                                    type="button" name="floor_dropdown">Floor 12"*24"</button>
+                                                    type="button" name="floor_dropdown">Floor 12X24</button>
                                                 <button class="dropdown-item" onclick="changeFloorSize(event)"
-                                                    type="button" name="floor_dropdown">Floor 24"*24"</button>
+                                                    type="button" name="floor_dropdown">Floor 24X24</button>
+                                                <button class="dropdown-item" onclick="changeFloorSize(event)"
+                                                    type="button" name="floor_dropdown">Floor Grout</button>
                                             </div>
                                         </div>
                                         <input class="form-control form-control-sm" id="floor_input"
@@ -112,14 +114,21 @@
                                     <form enctype="multipart/form-data" id="id_ajax_upload_cabinet" method="POST"
                                         novalidate="">
                                         {% csrf_token %}
-                                        <!-- {{ cabinet_form.texture_wall }} -->
-                                        <!-- <input type="color" class="form-control form-control-color w-25 " id="cabinet"
+                                        <!-- {{ cabinet_form.texture_wall }}
+                                        <input type="color" class="form-control form-control-color w-25 " id="cabinet"
                                             value="#563d7c" title="Choose your color" style="margin-bottom: 10px;"
                                             name="cabinet"> -->
                                         <input type="text" class="form-control form-control-color w-50" name="cabinet"
-                                            id="cabinet_id" onchange="get_results()">
+                                            id="cabinet_id">
                                         <input type="submit" />
                                     </form>
+                                    <script>
+                                        $(function () {
+                                            $("#cabinet_id").autocomplete({
+                                                source: "{% url 'myapp:render'%}"
+                                            });
+                                        });
+                                    </script>
                                 </div>
                                 <!-- <li class="list-group-item list-group-item-primary"> -->
                                 <div class="horizontal-scroll hstack gap-2">
@@ -213,6 +222,40 @@
                                         novalidate="">
                                         {% csrf_token %}
                                         <!-- {{ walls_form.texture_wall }} -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Choose Wall Size
+                                            </button>
+                                            <div class="dropdown-menu color-vertical-scrollable"
+                                                aria-labelledby="dropdownMenu2">
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Full 12X12</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Full 24X24</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Full 12X24</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Full Grout</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Full 3X6</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Full 6X10</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Half 12X12</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Half 24X24</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Half 12X24</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Half Grout</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Half 3X6</button>
+                                                <button class="dropdown-item" onclick="changeWallSize(event)"
+                                                    type="button" name="wall_dropdown">Wall Half 6X10</button>
+                                            </div>
+                                        </div>
                                         <input type="color" class="form-control form-control-color w-25 " id="wallsID"
                                             value="#563d7c" title="Choose your color" name="walls"
                                             style="margin-bottom: 10px;">
@@ -315,8 +358,8 @@
 
     <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-o-up"></span></div>
-    <script src="{% static 'js/main.js' %}"></script>
-    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/render_main.js' %}"></script>
+    <!-- <script src="{% static 'js/jquery.js' %}"></script> -->
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/jquery.fancybox.js' %}"></script>
