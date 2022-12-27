@@ -60,7 +60,6 @@ def userprofile(request, pk=None):
         user = User.objects.get(pk=pk)
     else:
         user = request.user
-    print(user)
     return render(request, 'userprofile.html', {'user': user})
 
 
@@ -118,15 +117,27 @@ def Faqpage(request):
 # 	# 	newval.append(i['upload'])
 # 	return render(request,'render.html')
 
-@login_required
-def rendermodel(request):
+# /search/?value=green
+def search(request):
     if 'term' in request.GET:
-        qs = Colors.objects.filter(color_name__icontains=request.GET.get('term'))
+        qs = Colors.objects.filter(
+            color_name__icontains=request.GET.get('term'))
         titles = list()
         for product in qs:
             titles.append(product.color_name)
         return JsonResponse(titles, safe=False)
-    
+
+
+@login_required
+def rendermodel(request):
+    # if 'term' in request.GET:
+    #     qs = Colors.objects.filter(
+    #         color_name__icontains=request.GET.get('term'))
+    #     titles = list()
+    #     for product in qs:
+    #         titles.append(product.color_name)
+    #     return JsonResponse(titles, safe=False)
+
     if request.method == 'POST':
         room_type = RoomType(first_name="Kitchen")
         room_type.save()
@@ -148,7 +159,18 @@ def rendermodel(request):
                                      roomtype=room_type, backsplashuser=request.user)
                     val.save()
                 return HttpResponseRedirect("#")
-        
+
+        elif 'walltexture' in request.POST:
+            
+            walltexture = WallTextureUploadForm(request.POST, request.FILES)
+            if walltexture.is_valid():
+                
+                for img_object in request.FILES.getlist('walltexture'):
+                    val = WallTexture(texture=img_object,
+                                      roomtype=room_type, walluser=request.user)
+                    val.save()
+                return HttpResponseRedirect("#")
+
         elif 'countertop' in request.POST:
             countertop = CounterTopForm(request.POST, request.FILES)
             if countertop.is_valid():
@@ -162,10 +184,11 @@ def rendermodel(request):
             cab = CabinetForm(request.POST, request.FILES)
             if cab.is_valid():
                 img_object = cab.data['cabinet']
-                color_input = Colors.objects.filter(color_name__iexact = img_object)
+                color_input = Colors.objects.filter(
+                    color_name__iexact=img_object)
                 if len(color_input) != 0:
                     val = Cabinet(cabinet=color_input[0].color_hex,
-                                roomtype=room_type, cabinetuser=request.user)
+                                  roomtype=room_type, cabinetuser=request.user)
                     val.save()
                 return HttpResponseRedirect("#")
 
@@ -183,16 +206,16 @@ def rendermodel(request):
             if sink.is_valid():
                 img_object = sink.data['sink']
                 val = Sink(sink=img_object,
-                                 roomtype=room_type, sinkuser=request.user)
+                           roomtype=room_type, sinkuser=request.user)
                 val.save()
                 return HttpResponseRedirect("#")
-            
+
         elif 'faucet' in request.POST:
             faucet = FaucetForm(request.POST, request.FILES)
             if faucet.is_valid():
                 img_object = faucet.data['faucet']
                 val = Faucet(faucet=img_object,
-                                 roomtype=room_type, faucetuser=request.user)
+                             roomtype=room_type, faucetuser=request.user)
                 val.save()
                 return HttpResponseRedirect("#")
 
@@ -200,35 +223,52 @@ def rendermodel(request):
             walls = WallsForm(request.POST, request.FILES)
             if walls.is_valid():
                 img_object = walls.data['walls']
-                val = Walls(walls=img_object, roomtype=room_type,
-                            walluser=request.user)
+                # val = Walls(walls=img_object, roomtype=room_type,
+                #             walluser=request.user)
+                # val.save()
+                color_input = Colors.objects.filter(
+                    color_name__iexact=img_object)
+                if len(color_input) != 0:
+                    val = Walls(walls=color_input[0].color_hex, roomtype=room_type,
+                                walluser=request.user)
                 val.save()
                 return HttpResponseRedirect("#")
-        
+
         elif 'door' in request.POST:
             door = DoorForm(request.POST, request.FILES)
             if door.is_valid():
                 img_object = door.data['door']
                 val = Door(door=img_object, roomtype=room_type,
-                            dooruser=request.user)
+                           dooruser=request.user)
                 val.save()
                 return HttpResponseRedirect("#")
-            
+
+        elif 'trimming' in request.POST:
+            trimming = TrimmingForm(request.POST, request.FILES)
+            if trimming.is_valid():
+                img_object = trimming.data['trimming']
+                val = Trimming(trimming=img_object, roomtype=room_type,
+                               trimminguser=request.user)
+                val.save()
+                return HttpResponseRedirect("#")
+
     else:
-        floor_form = FloorUploadForm()
-        backsplash_form = BackSplashForm()
-        countertop_form = CounterTopForm()
-        cabinet_form = CabinetForm()
-        cabinetHandle_form = CabinetHandleForm()
-        sink_form = SinkForm()
-        faucet_form = FaucetForm()
-        walls_form = WallsForm()
-        door_form = DoorForm()
+        # floor_form = FloorUploadForm()
+        # backsplash_form = BackSplashForm()
+        # countertop_form = CounterTopForm()
+        # cabinet_form = CabinetForm()
+        # cabinetHandle_form = CabinetHandleForm()
+        # sink_form = SinkForm()
+        # faucet_form = FaucetForm()
+        # walls_form = WallsForm()
+        # door_form = DoorForm()
 
         floor_show = Floor.objects.filter(
             roomuser=request.user).order_by("-id")
         bcsplash_show = Backsplash.objects.filter(
             backsplashuser=request.user).order_by("-id")
+        walltexture_show = WallTexture.objects.filter(
+            walluser=request.user).order_by("-id")
         countertop_show = Countertop.objects.filter(
             countertopuser=request.user).order_by("-id")
         cabinet_show = Cabinet.objects.filter(
@@ -243,17 +283,27 @@ def rendermodel(request):
             walluser=request.user).order_by("-id")
         door_show = Door.objects.filter(
             dooruser=request.user).order_by("-id")
-        
+        trimming_show = Trimming.objects.filter(
+            trimminguser=request.user).order_by("-id")
+
         color_names = Colors.objects.all()
+        metal_colors = Metal_Colors.objects.all()
+        vinyl_colors = Vinyl_Colors.objects.all()
+        wood_colors = Wood_Colors.objects.all()
 
         return render(request, 'render.html', {"floor_textures": floor_show,
                                                "bcsplash": bcsplash_show,
+                                               "walls_textures":walltexture_show,
                                                "cabinet_textures": cabinet_show,
                                                "cabinetHandle_textures": cabinethandle_show,
                                                "sink_textures": sink_show,
-                                               "faucet_textures":faucet_show,
-                                               "walls_textures": walls_show,
+                                               "faucet_textures": faucet_show,
+                                               "wall_colors": walls_show,
                                                "door_textures": door_show,
-                                               "countertop_textures":countertop_show,
-                                               "color_names":color_names
+                                               "trimming_colors": trimming_show,
+                                               "countertop_textures": countertop_show,
+                                               "color_names": color_names,
+                                               "metal_colors": metal_colors,
+                                               "vinyl_colors": vinyl_colors,
+                                               "wood_colors": wood_colors
                                                })

@@ -42,6 +42,10 @@ class BackSplashForm(forms.ModelForm):
         model = Backsplash
         fields = ['back_splash',]
         
+class WallTextureUploadForm(forms.ModelForm):
+    class Meta:
+        model = WallTexture
+        fields = ['texture',]       
 class CounterTopForm(forms.ModelForm):
     class Meta:
         model = Countertop
@@ -76,3 +80,8 @@ class DoorForm(forms.ModelForm):
     class Meta:
         model = Door
         fields = ['door']
+        
+class TrimmingForm(forms.ModelForm):
+    class Meta:
+        model = Trimming
+        fields = ['trimming']

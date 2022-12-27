@@ -14,8 +14,9 @@ for (i = 0; i < coll.length; i++) {
     });
 }
 
-// function get_results (color_names){
-//     $( "#cabinet_id" ).autocomplete({
-//       source: color_names
-//     });
-// }
+$(function () {
+    $("#upload_tile_link").on('click', function (e) {
+        e.preventDefault();
+        $("#upload_tile_file:hidden").trigger('click');
+    });
+});

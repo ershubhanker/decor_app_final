@@ -5,5 +5,8 @@ from .models import *
 
 admin.site.register(RoomCategory)
 admin.site.register(Room)
-admin.site.register(Cabinet)
-admin.site.register(Faucet)
+admin.site.register(Walls)
+admin.site.register(Floor)
+admin.site.register(Backsplash)
+admin.site.register(Trimming)
+admin.site.register(WallTexture)

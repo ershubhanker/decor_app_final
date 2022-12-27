@@ -16,4 +16,5 @@ urlpatterns = [
     path('faq/', views.Faqpage,name='faq'),
     path('team/', views.Teampage,name='team'),
     path('render/', views.rendermodel,name='render'),
+    path('search/', views.search,name='search'),
 ]

@@ -53,6 +53,14 @@ class Backsplash(models.Model):
     def __str__(self):
         return "%s" % (self.roomtype)
 
+class WallTexture(models.Model):
+    texture = models.ImageField(blank=True,upload_to ='img/wall')
+    roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    walluser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    def __str__(self):
+        return "%s" % (self.roomtype)
+
 class Countertop(models.Model):
     counter_top = models.ImageField(blank=True,upload_to ='img/backsplash')
     roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
@@ -109,11 +117,40 @@ class Door(models.Model):
     def __str__(self):
         return "%s" % (self.roomtype)
 
+class Trimming(models.Model):
+    trimming = models.CharField(blank=True, max_length=10)
+    roomtype = models.ForeignKey(RoomType, on_delete=models.CASCADE)
+    trimminguser = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    
+    def __str__(self):
+        return "%s" % (self.roomtype)
+
 class Colors(models.Model):
     color_name = models.CharField(blank=True, max_length=10)
     color_number = models.CharField(blank=True, max_length=10)
     color_hex = models.CharField(blank=True, max_length=10)
     color_rgb = models.CharField(blank=True, max_length=20)
+    
+    def __str__(self):
+        return "%s" % (self.color_name)
+
+class Metal_Colors(models.Model):
+    color_name = models.CharField(blank=True, max_length=10)
+    color_hex = models.CharField(blank=True, max_length=10)
+    
+    def __str__(self):
+        return "%s" % (self.color_name)
+    
+class Vinyl_Colors(models.Model):
+    color_name = models.CharField(blank=True, max_length=10)
+    color_hex = models.CharField(blank=True, max_length=10)
+    
+    def __str__(self):
+        return "%s" % (self.color_name)
+    
+class Wood_Colors(models.Model):
+    color_name = models.CharField(blank=True, max_length=10)
+    color_hex = models.CharField(blank=True, max_length=10)
     
     def __str__(self):
         return "%s" % (self.color_name)
